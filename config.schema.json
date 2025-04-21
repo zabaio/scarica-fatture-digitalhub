@@ -1,0 +1,58 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "$id": "https://github.com/zabaio/scarica-fatture-digitalhub/blob/main/config.schema.json",
+    "title": "Config",
+    "description": "Required structure of the config file",
+    "type": "object",
+    "properties": {
+        "dhUsername": {
+            "description": "Your DigitalHub Username",
+            "type": "string"
+        },
+        "dhPassword": {
+            "description": "Your DigitalHub Password",
+            "type": "string"
+        },
+        "dhCessionari": {
+            "description": "The list of Cessionari whose invoices you want to download",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "dhDownloadDir": {
+            "description": "Relative path to the designated download directory",
+            "type": "string",
+            "default": "esportazioni/downloads/",
+            "pattern": ".*/$"
+        },
+        "dhArchiveDir": {
+            "description": "Relative path to the designated archive directory",
+            "type": "string",
+            "default": "esportazioni/archives/",
+            "pattern": ".*/$"
+        },
+        "dhXmlDir": {
+            "description": "Relative path to the designated xml directory",
+            "type": "string",
+            "default": "esportazioni/xml/",
+            "pattern": ".*/$"
+        },
+        "dhLastUpdate": {
+            "description": "Day of the last successful update operation - yyyy-MM-dd",
+            "type": "string",
+            "default": "2019-01-01",
+            "pattern": "^([3-9]\\d{3}|2([1-9]\\d{2}|0([2-9]\\d|19)))-(0[1-9]|1[012])-(0[1-9]|[12]\\d|3[01])$"
+        },
+        "dhExportMaxPeriod": {
+            "description": "The maximum number of days each export operation can cover",
+            "type": "integer",
+            "default": 30,
+            "minimum": 0,
+            "maximum": 59
+        }
+    },
+    "required": [ "dhUsername", "dhPassword", "dhCessionari", "dhDownloadDir", "dhArchiveDir", "dhXmlDir", "dhLastUpdate", "dhExportMaxPeriod" ]
+}

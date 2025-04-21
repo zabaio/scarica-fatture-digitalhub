@@ -1,0 +1,17 @@
+{
+  "name": "scarica-fatture-digitalhub",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.14.1"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0"
+  }
+}
