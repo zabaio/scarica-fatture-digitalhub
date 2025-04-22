@@ -12,6 +12,6 @@
     "@types/node": "^22.14.1"
   },
   "dependencies": {
-    "date-fns": "^4.1.0"
+    "dayjs": "^1.11.13"
   }
 }

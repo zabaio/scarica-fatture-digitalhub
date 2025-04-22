@@ -1,14 +1,14 @@
 import { test, expect } from '@playwright/test';
-import { lightFormat as format, add, min } from 'date-fns';
+import dayjs from 'dayjs';
 
 const config = JSON.parse(JSON.stringify(require("../config.json")))
 test.use({viewport:{width:1920,height:1080}})
 
 //Utility formatting
-function formatDMY(date: Date){ return format(date, "dd-MM-yyyy"); }
-function formatYMD(date: Date){ return format(date, "yyyy-MM-dd"); }
-function formatFilename(ces: string, start: Date, end: Date, cur: Date){
-  return "EXP_" + ces + "_" + formatYMD(start) + "_" + formatYMD(end) + "_" + format(cur, "yyyy-MM-dd'T'HH-mm-ss") + ".zip";
+function formatDMY(date: dayjs.Dayjs){ return date.format('DD-MM-YYYY'); }
+function formatYMD(date: dayjs.Dayjs){ return date.format('YYYY-MM-DD'); }
+function formatFilename(ces: string, start: dayjs.Dayjs, end: dayjs.Dayjs, cur: dayjs.Dayjs){
+  return "EXP_" + ces + "_" + formatYMD(start) + "_" + formatYMD(end) + "_" + cur.format('YYYY-MM-DD[T]HH-mm-ss') + ".zip";
 }
 
 test('download-invoices', async ({ page }) => {
@@ -24,9 +24,10 @@ test('download-invoices', async ({ page }) => {
   }
 
   //For each time period equal or shorter than config.dhExportMaxPeriod days between the last update and today
-  const currentDate = new Date();
-  for (let startDate = new Date(config.dhLastUpdate); startDate < currentDate;){
-    let endDate = min([currentDate, add(startDate, {days: config.dhExportMaxPeriod})]);
+  const currentDate = dayjs();
+  for (let startDate = dayjs(config.dhLastUpdate); startDate < currentDate;){
+    let endDate = startDate.add(config.dhExportMaxPeriod, 'day');
+    endDate = (endDate < currentDate) ? endDate : currentDate;
 
     //For each cessionario
     for (const cessionario of config.dhCessionari){
@@ -70,7 +71,7 @@ test('download-invoices', async ({ page }) => {
       await page.getByTitle('Area applicativa').click();
     }
     //Go to the next export period
-    startDate = add(startDate, {days: config.dhExportMaxPeriod});
+    startDate = startDate.add(config.dhExportMaxPeriod, 'day');
   }
   //Logout
   console.log("Logging out...");
