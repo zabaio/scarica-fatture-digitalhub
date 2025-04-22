@@ -23,16 +23,14 @@
             "uniqueItems": true
         },
         "dhDownloadDir": {
-            "description": "Relative path to the designated download directory",
+            "description": "Relative path to the download directory",
             "type": "string",
-            "default": "esportazioni/downloads/",
-            "pattern": ".*/$"
+            "const": "esportazioni/downloads/"
         },
         "dhArchiveDir": {
-            "description": "Relative path to the designated archive directory",
+            "description": "Relative path to the archive directory",
             "type": "string",
-            "default": "esportazioni/archives/",
-            "pattern": ".*/$"
+            "const": "esportazioni/archives/"
         },
         "dhXmlDir": {
             "description": "Relative path to the designated xml directory",

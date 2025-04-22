@@ -1,0 +1,11 @@
+{
+    "$schema":  "./config.schema.json",
+    "dhUsername":  "",
+    "dhPassword":  "",
+    "dhCessionari":  [""],
+    "dhDownloadDir":  "esportazioni/downloads/",
+    "dhArchiveDir":  "esportazioni/archives/",
+    "dhXmlDir":  "esportazioni/xml/",
+    "dhLastUpdate":  "2019-01-01",
+    "dhExportMaxPeriod":  30
+}
