@@ -8,12 +8,14 @@ Script per scaricare fatture xml dalla piattaforma DigitalHub di Zucchetti trami
  
     //Apri config\config.empty.json
     //Compila
+        ...
         "dhUsername" = <Nome utente DigitalHub>,
         "dhPassword" = <Password DigitalHub>,
         "dhCessionari" = [<Nome Cessionario 1>, ...],
-        "dhLastUpdate" = <Data di inizio ricerca>
-        "dhExportMaxPeriod" = <Durata massima di ciascuna esportazione>
-        "dhXmlDir" = <Cartella di destinazione delle fatture>
+        "dhLastUpdate" = <Data di inizio ricerca>,
+        "dhExportMaxPeriod" = <Durata massima di ciascuna esportazione>,
+        "dhXmlDir" = <Cartella di destinazione delle fatture>,
+        ...
     //Salva come config\config.json
     
 ## Uilizzo

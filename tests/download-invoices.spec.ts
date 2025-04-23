@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import dayjs from 'dayjs';
 
-const config = JSON.parse(JSON.stringify(require("../config.json")))
+const config = JSON.parse(JSON.stringify(require("../config/config.json")))
 test.use({viewport:{width:1920,height:1080}})
 
 //Utility formatting
@@ -22,7 +22,7 @@ test('download-invoices', async ({ page }) => {
     await page.getByRole('button', { name: /^Accedi$|^Forza accesso$/ }).click();
     await page.waitForTimeout(2000);
   }
-
+  await page.getByTitle('Area applicativa').click();
   //For each time period equal or shorter than config.dhExportMaxPeriod days between the last update and today
   const currentDate = dayjs();
   for (let startDate = dayjs(config.dhLastUpdate); startDate < currentDate;){
@@ -32,17 +32,17 @@ test('download-invoices', async ({ page }) => {
     //For each cessionario
     for (const cessionario of config.dhCessionari){
       console.log("Exporting "+ formatFilename(cessionario, startDate, endDate, currentDate) + "...");
-      
       //Go to Fatturazione Passiva -> Esportazione Massiva
       await page.locator('iframe[name="Main"]').contentFrame().getByRole('link', { name: '' }).click();
       await page.locator('iframe[name="Main"]').contentFrame().getByRole('link', { name: '' }).click();
-      
       //Fill and send the request for the current cessionario and period
       await page.locator("[id^='spModalLayerRef_']").contentFrame().locator("[id$='_CEDENOM']").fill(cessionario);
       await page.locator("[id^='spModalLayerRef_']").contentFrame().locator("[id$='_p_DODATARIC_FROM']").fill(formatDMY(startDate));
       await page.locator("[id^='spModalLayerRef_']").contentFrame().locator("[id$='_p_DODATARIC_TO']").fill(formatDMY(endDate));
+      //await page.getByTitle('Close layer').click();
       await page.locator("[id^='spModalLayerRef_']").contentFrame().getByRole('link', { name: 'Esporta ' }).click();
-
+      
+      
       //Check if the request yields any results
       const gestioneEsportazioniButton = page.locator("[id^='spModalLayerRef_']").contentFrame().getByRole('link', { name: 'Gestione Esportazioni ' });
       const nessunFileDialog = page.locator("[id^='spModalLayerRef_']").contentFrame().getByText('Nessun file presente per il');
