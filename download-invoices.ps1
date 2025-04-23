@@ -15,7 +15,7 @@ Remove-Item ${DOWNLOAD_DIR}* -Recurse -Force
 Write-Output "Requesting from DigitalHub all passive invoices for cessionari"
 Write-Output $CONFIG.dhCessionari 
 Write-Output "from $($CONFIG.dhLastUpdate) to today."
-npx playwright test tests/download-invoices.spec.ts
+npx playwright test -g "download-invoices"
 
 if ((Get-Content test-results\.last-run.json | ConvertFrom-Json).status -eq "passed"){
     

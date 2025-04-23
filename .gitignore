@@ -7,3 +7,5 @@ config/config.json
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+.github/workflows/playwright copy.yml
