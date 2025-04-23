@@ -3,9 +3,9 @@
     "dhUsername":  "",
     "dhPassword":  "",
     "dhCessionari":  [""],
-    "dhDownloadDir":  "esportazioni/downloads/",
-    "dhArchiveDir":  "esportazioni/archives/",
-    "dhXmlDir":  "esportazioni/xml/",
     "dhLastUpdate":  "2019-01-01",
-    "dhExportMaxPeriod":  30
+    "dhExportMaxPeriod":  30,
+    "dhXmlDir":  "esportazioni/xml/",
+    "dhDownloadDir":  "esportazioni/downloads/",
+    "dhArchiveDir":  "esportazioni/archives/"
 }

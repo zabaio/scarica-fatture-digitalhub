@@ -1,19 +1,26 @@
 # scarica-fatture-digitalhub
 Script per scaricare fatture xml dalla piattaforma DigitalHub di Zucchetti tramite Playwright.
 
-## Testato con
-- Powershell 5.1
-- Node.js v22.14.0
+![Powershell](https://img.shields.io/badge/Powershell-5.1-blue)
+![Node.js](https://img.shields.io/badge/Node.js-v22.14.0-blue)
 
-## Uso
-
-    //Configurazione: 
-    //Crea un file config.json secondo lo schema config.schema.json
+## Configurazione
+ 
+    //Apri config\config.empty.json
+    //Compila
+        "dhUsername" = <Nome utente DigitalHub>,
+        "dhPassword" = <Password DigitalHub>,
+        "dhCessionari" = [<Nome Cessionario 1>, ...],
+        "dhLastUpdate" = <Data di inizio ricerca>
+        "dhExportMaxPeriod" = <Durata massima di ciascuna esportazione>
+        "dhXmlDir" = <Cartella di destinazione delle fatture>
+    //Salva come config\config.json
     
-    //Esecuzione:
+## Uilizzo
+
     ./download-invoices.ps1
 
-## Roadmap
+## Funzionalità
 
 - [x] Fatture passive
 - [x] Cessionari multipli

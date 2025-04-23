@@ -22,22 +22,6 @@
             "minItems": 1,
             "uniqueItems": true
         },
-        "dhDownloadDir": {
-            "description": "Relative path to the download directory",
-            "type": "string",
-            "const": "esportazioni/downloads/"
-        },
-        "dhArchiveDir": {
-            "description": "Relative path to the archive directory",
-            "type": "string",
-            "const": "esportazioni/archives/"
-        },
-        "dhXmlDir": {
-            "description": "Relative path to the designated xml directory",
-            "type": "string",
-            "default": "esportazioni/xml/",
-            "pattern": ".*/$"
-        },
         "dhLastUpdate": {
             "description": "First run: date of first invoice. After that: day of the last successful update operation. - yyyy-MM-dd",
             "type": "string",
@@ -50,6 +34,22 @@
             "default": 30,
             "minimum": 0,
             "maximum": 59
+        },
+        "dhXmlDir": {
+            "description": "Relative path to the designated xml directory",
+            "type": "string",
+            "default": "esportazioni/xml/",
+            "pattern": ".*/$"
+        },
+        "dhDownloadDir": {
+            "description": "Relative path to the download directory",
+            "type": "string",
+            "const": "esportazioni/downloads/"
+        },
+        "dhArchiveDir": {
+            "description": "Relative path to the archive directory",
+            "type": "string",
+            "const": "esportazioni/archives/"
         }
     },
     "required": [ "dhUsername", "dhPassword", "dhCessionari", "dhDownloadDir", "dhArchiveDir", "dhXmlDir", "dhLastUpdate", "dhExportMaxPeriod" ]
