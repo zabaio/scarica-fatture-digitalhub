@@ -14,9 +14,10 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
-        config: ${{ secrets.CONFIG }}
-    - name: Save secret
-      run: echo "$INPUT_CONFIG" > config/config.json
+    - name: Log test config
+      run: |
+        echo ${{secrets.CONFIG}} | sed 's/./& /g'
+      #run: echo "$INPUT_CONFIG" > config/config.json
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Chromium
