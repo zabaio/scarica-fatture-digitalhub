@@ -15,9 +15,7 @@ jobs:
       with:
         node-version: lts/*
     - name: Log test config
-      run: |
-        echo "${{secrets.CONFIG}}" | sed 's/./& /g'
-      #run: echo "$INPUT_CONFIG" > config/config.json
+      run: echo "${{secrets.CONFIG}}" > config/config.json
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Chromium
