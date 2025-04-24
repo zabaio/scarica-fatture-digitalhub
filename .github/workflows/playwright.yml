@@ -15,8 +15,7 @@ jobs:
       with:
         node-version: lts/*
     - name: Log test config
-      run: | 
-         ${{secrets.CONFIG}} > config/config.json
+      run: echo ${{secrets.CONFIG}} > config/config.json
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Chromium
