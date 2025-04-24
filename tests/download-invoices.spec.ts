@@ -4,8 +4,6 @@ import * as utils from './utils';
 import * as path from 'fs';
 
 test.use({viewport:{width:1920,height:1080}})
-var text = path.readFileSync("config/config.json");
-console.log(text.toString().replace(/(.{1})/g,"$1 "));
 const config = JSON.parse(JSON.stringify(require("../config/config.json")));
 
 test.beforeEach(async ({page}) => {
