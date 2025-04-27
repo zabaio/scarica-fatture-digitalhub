@@ -17,11 +17,16 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
-    - name: Setup test config
-      run: echo '${{secrets.CONFIG}}' > config\config.json \
-        Set-Variable CONFIG (Get-Content config\config.json -Raw -ErrorAction Stop | ConvertFrom-Json) \
-        $CONFIG.dhLastUpdate = (get-date -format yyyy-MM-dd) \
-        Set-Content -Value ($CONFIG | ConvertTo-Json) -Path config\config.json          
+    - name: Create config
+      run: echo '${{secrets.CONFIG}}' > config\config.json
+    - name: check
+      run: ls config
+    - name: Read config
+      run: Set-Variable CONFIG (Get-Content config\config.json -Raw -ErrorAction Stop | ConvertFrom-Json) \
+    - name: Edit config
+      run: $CONFIG.dhLastUpdate = (get-date -format yyyy-MM-dd) \
+    - name: Save config
+      run: Set-Content -Value ($CONFIG | ConvertTo-Json) -Path config\config.json          
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Chromium
