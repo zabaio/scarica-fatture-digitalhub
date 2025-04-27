@@ -19,7 +19,7 @@ jobs:
         node-version: lts/*
     - name: Setup test config
       run: echo '${{secrets.CONFIG}}' > config\config.json \
-        Set-Variable CONFIG ("${{secrets.CONFIG}}" | ConvertFrom-Json) \
+        Set-Variable CONFIG (Get-Content config\config.json -Raw -ErrorAction Stop | ConvertFrom-Json) \
         $CONFIG.dhLastUpdate = (get-date -format yyyy-MM-dd) \
         Set-Content -Value ($CONFIG | ConvertTo-Json) -Path config\config.json          
     - name: Install dependencies
