@@ -1,7 +1,6 @@
 import { Page, test, expect } from '@playwright/test';
 import dayjs from 'dayjs';
 import * as utils from './utils';
-import * as path from 'fs';
 
 test.use({viewport:{width:1920,height:1080}})
 const config = JSON.parse(JSON.stringify(require("../config/config.json")));
