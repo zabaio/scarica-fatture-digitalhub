@@ -19,14 +19,8 @@ jobs:
         node-version: lts/*
     - name: Create config
       run: echo '${{secrets.CONFIG}}' > config\config.json
-    - name: check
-      run: ls config
-    - name: Read config
-      run: Set-Variable CONFIG (Get-Content config\config.json -Raw -ErrorAction Stop | ConvertFrom-Json) \
-    - name: Edit config
-      run: $CONFIG.dhLastUpdate = (get-date -format yyyy-MM-dd) \
-    - name: Save config
-      run: Set-Content -Value ($CONFIG | ConvertTo-Json) -Path config\config.json          
+    - name: Setup config
+      run: .\.github\workflows\setup-config.ps1
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Chromium
