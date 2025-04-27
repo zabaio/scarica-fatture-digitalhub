@@ -34,7 +34,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: "only-on-failure",
     launchOptions: {
-      slowMo: 200,
+      slowMo: 300,
     }
   },
 
