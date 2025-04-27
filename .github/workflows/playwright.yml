@@ -9,18 +9,18 @@ jobs:
   test:
     timeout-minutes: 10
     runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
     - name: Create config
-      run: |
-        echo '${{secrets.CONFIG}}' > config\config.json
-        .\.github\workflows\setup-config.ps1
-      shell: pwsh
+      run: echo '${{secrets.CONFIG}}' > config\config.json
     - name: Setup config
-      run: 
+      run: .\.github\workflows\setup-config.ps1
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Chromium
