@@ -1,7 +1,7 @@
 name: Playwright Tests
 on:
-  push:
-    branches: [ main, master ]
+  #push:
+  #  branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
   workflow_dispatch:
@@ -19,16 +19,26 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
+
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Chromium
       run: npx playwright install --with-deps chromium
+    
     - name: Create config
-      run: echo '${{secrets.CONFIG}}' > config\config.json
-    - name: Setup config
-      run: .\.github\workflows\setup-config.ps1
-    - name: Run Playwright tests
-      run: npx playwright test
+      run: echo '${{secrets.CONFIG}}' > config/config.json
+    
+    - name: Get lastUpdate and set it in config.json as dhLastUpdate
+      run: | 
+        $lu = ./.github/workflows/setup-config.ps1 getlu
+        ./.github/workflows/setup-config.ps1 setlu $lu
+    
+    #- name: Run Playwright tests
+    #  run: npx playwright test
+    
+    - name: Store new lastUpdate
+      run: ./.github/workflows/setup-config.ps1 savelu
+
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
