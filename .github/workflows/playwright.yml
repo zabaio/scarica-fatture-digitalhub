@@ -20,27 +20,25 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.SCARICAFATTUREDIGITALHUB_TOKEN }}
+      
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-
       - name: Install dependencies
         run: npm ci
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
     
-      - name: Create config
-        run: echo '${{secrets.CONFIG}}' > config/config.json
-    
-      - name: Get lastUpdate and assign it in config/config.json to dhLastUpdate
-        run: | 
+      - name: Set up config file
+        run: |
+          echo '${{secrets.CONFIG}}' > config/config.json
           $lu = ./.github/workflows/setup-config.ps1 getlu
           ./.github/workflows/setup-config.ps1 setlu $lu
     
       - name: Run Playwright tests
-        run: npx playwright test
+        run: ./download-invoices.ps1
     
-      - name: Save new lastUpdate for next execution and push change
+      - name: Save run timestamp
         run: ./.github/workflows/setup-config.ps1 savelu
     
       - uses: actions/upload-artifact@v4
