@@ -21,7 +21,6 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
-        token: ${{ secrets.SCARICAFATTUREDIGITALHUB_TOKEN }}
 
     #- name: Install dependencies
     #  run: npm ci
@@ -40,6 +39,8 @@ jobs:
     #  run: npx playwright test
     
     - name: Store new lastUpdate
+      env:
+        PAT: ${{ secrets.SCARICAFATTUREDIGITALHUB_TOKEN }}
       run: ./.github/workflows/setup-config.ps1 savelu
 
     - uses: actions/upload-artifact@v4
