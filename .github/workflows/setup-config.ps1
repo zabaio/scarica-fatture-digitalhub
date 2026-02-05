@@ -15,7 +15,7 @@ function Save-LastUpdate {
 
     $token = $env:_PAT
     $repo = $env:GITHUB_REPOSITORY # Es: zabaio/scarica-fatture-digitalhub
-    git remote set-url origin "https://x-access-token:${token}@://github.com${repo}.git"
+    git remote set-url origin "https://x-access-token:${token}@://github.com/${repo}.git"
 
     # Configurazione Git locale
     git config user.name "github-actions[bot]"
