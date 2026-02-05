@@ -13,46 +13,48 @@ jobs:
     runs-on: windows-latest
     permissions:
       contents: write 
+      actions: write
     defaults:
       run:
         shell: pwsh
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-        token: ${{ secrets.SCARICAFATTUREDIGITALHUB_TOKEN }}
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.SCARICAFATTUREDIGITALHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
 
-    #- name: Install dependencies
-    #  run: npm ci
-    #- name: Install Playwright Chromium
-    #  run: npx playwright install --with-deps chromium
+      #- name: Install dependencies
+      #  run: npm ci
+      #- name: Install Playwright Chromium
+      #  run: npx playwright install --with-deps chromium
     
-    - name: Create config
-      run: echo '${{secrets.CONFIG}}' > config/config.json
+      - name: Create config
+        run: echo '${{secrets.CONFIG}}' > config/config.json
     
-    - name: Get lastUpdate and set it in config.json as dhLastUpdate
-      run: | 
-        $lu = ./.github/workflows/setup-config.ps1 getlu
-        ./.github/workflows/setup-config.ps1 setlu $lu
+      - name: Get lastUpdate and set it in config.json as dhLastUpdate
+        run: | 
+          $lu = ./.github/workflows/setup-config.ps1 getlu
+          ./.github/workflows/setup-config.ps1 setlu $lu
     
-    #- name: Run Playwright tests
-    #  run: npx playwright test
+      #- name: Run Playwright tests
+      #  run: npx playwright test
     
-    - name: Store new lastUpdate
-      run: ./.github/workflows/setup-config.ps1 savelu
+      - name: Store new lastUpdate
+        run: ./.github/workflows/setup-config.ps1 savelu
 
-    - name: Commit and Push
-      run: |
-        git config user.name "github-actions"
-        git config user.email "github-actions@users.noreply.github.com"
-        git add .github/workflows/lastUpdate.txt
-        git commit -m "chore: update lastUpdate $env:GITHUB_RUN_NUMBER [skip ci]"
-        git push
+      - name: Commit and Push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add .github/workflows/lastUpdate.txt
+          git commit -m "chore: update lastUpdate $env:GITHUB_RUN_NUMBER [skip ci]"
+          git push
     
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
