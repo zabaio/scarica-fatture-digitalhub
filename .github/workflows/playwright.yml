@@ -21,7 +21,7 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
-        token: ${{ secrets.SCARICAFATTUREDIGITALHUB_TOKEN }}
+        token: sanfuonasfajk
 
     #- name: Install dependencies
     #  run: npm ci
