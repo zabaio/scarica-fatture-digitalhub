@@ -24,10 +24,10 @@ jobs:
         with:
           node-version: lts/*
 
-      #- name: Install dependencies
-      #  run: npm ci
-      #- name: Install Playwright Chromium
-      #  run: npx playwright install --with-deps chromium
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
     
       - name: Create config
         run: echo '${{secrets.CONFIG}}' > config/config.json
@@ -37,8 +37,8 @@ jobs:
           $lu = ./.github/workflows/setup-config.ps1 getlu
           ./.github/workflows/setup-config.ps1 setlu $lu
     
-      #- name: Run Playwright tests
-      #  run: npx playwright test
+      - name: Run Playwright tests
+        run: npx playwright test
     
       - name: Save new lastUpdate for next execution and push change
         run: ./.github/workflows/setup-config.ps1 savelu
