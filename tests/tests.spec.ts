@@ -17,7 +17,7 @@ test('log-in-out', async ({page}) => {})
 
 test('navigate-and-fill', async ({page}) =>{
   await utils.goToExportForm(page);
-  await utils.fillExportForm(page, "Cessionario", dayjs(), dayjs());
+  await utils.fillExportForm(page, config.dhCessionari[0], dayjs(), dayjs());
   await page.getByTitle('Close layer').click();
 })
 
