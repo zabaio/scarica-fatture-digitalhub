@@ -12,19 +12,6 @@ function Save-LastUpdate {
     $newLu = Get-Date -Format "yyyy-MM-dd"
     $newLu | Out-File -FilePath ".github/workflows/lastUpdate.txt" -Encoding utf8
     Write-Host "Nuova ultima esecuzione salvata: $newLu"
-
-    $token = $env:_PAT
-    $repo = $env:GITHUB_REPOSITORY # Es: zabaio/scarica-fatture-digitalhub
-    git remote set-url origin "https://x-access-token:${token}@://github.com/${repo}.git"
-
-    # Configurazione Git locale
-    git config user.name "github-actions[bot]"
-    git config user.email "github-actions[bot]@users.noreply.github.com"
-    
-    # Commit e Push
-    git add .github/workflows/lastUpdate.txt
-    git commit -m "chore: update lastUpdate $env:GITHUB_RUN_NUMBER [skip ci]"
-    git push
 }
 
 function Set-LastUpdate{
