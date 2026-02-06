@@ -33,7 +33,7 @@ jobs:
           echo '${{secrets.CONFIG}}' > config/config.json
           $lu = .github/utils/setup-config.ps1 getlu
           .github/utils/setup-config.ps1 setlu $lu
-          Tree
+          Get-ChildItem -Recurse | Select-Object FullName
     
       - name: Run Playwright tests
         run: ./download-invoices.ps1
