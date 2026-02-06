@@ -20,7 +20,7 @@ function Save-LastUpdate {
 }
 
 function Set-LastUpdate{
-    Set-Variable CONFIG_PATH config\config.json
+    Set-Variable CONFIG_PATH config/config.json
     Set-Variable CONFIG (Get-Content $CONFIG_PATH -Raw -ErrorAction Stop | ConvertFrom-Json)
     $CONFIG.dhLastUpdate = $args[1]
     Set-Content -Value ($CONFIG | ConvertTo-Json) -Path $CONFIG_PATH
