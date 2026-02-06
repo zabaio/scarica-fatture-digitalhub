@@ -33,7 +33,9 @@ jobs:
           echo '${{secrets.CONFIG}}' > config/config.json
           $lu = .github/utils/setup-config.ps1 getlu
           .github/utils/setup-config.ps1 setlu $lu
-          Get-ChildItem -Recurse | Select-Object FullName
+          sudo apt-get update
+          sudo apt-get install -y tree
+          tree .
     
       - name: Run Playwright tests
         run: ./download-invoices.ps1
