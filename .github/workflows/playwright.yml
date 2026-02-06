@@ -35,7 +35,7 @@ jobs:
           .github/utils/setup-config.ps1 setlu $lu
     
       - name: Run Playwright tests
-        run: download-invoices.ps1
+        run: ./download-invoices.ps1
     
       - name: Save run timestamp
         run: .github/utils/setup-config.ps1 savelu
