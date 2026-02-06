@@ -1,6 +1,6 @@
 #Check validity of config file and import it
-Set-Variable CONFIG_PATH config\config.json
-if (!(node config\config-validate.js)){
+Set-Variable CONFIG_PATH config/config.json
+if (!(node config/config-validate.js)){
     Write-Output "Invalid config file."
     exit 1
 }
@@ -17,7 +17,7 @@ Write-Output $CONFIG.dhCessionari
 Write-Output "from $($CONFIG.dhLastUpdate) to today."
 npx playwright test -g "download-invoices"
 
-if ((Get-Content test-results\.last-run.json | ConvertFrom-Json).status -eq "passed"){
+if ((Get-Content test-results/.last-run.json | ConvertFrom-Json).status -eq "passed"){
     
     #Extract the xml files, store away the archives and clean
     Write-Output "Export successful. Extracting and archiving the downloaded files."
