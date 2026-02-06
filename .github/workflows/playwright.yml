@@ -10,7 +10,10 @@ on:
 jobs:
   test:
     timeout-minutes: 10
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository_owner }}/playwright-pwsh:latest
+      options: --user root
     permissions:
       contents: write 
     defaults:
@@ -18,28 +21,24 @@ jobs:
         shell: pwsh
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SCARICAFATTUREDIGITALHUB_TOKEN }}
       
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
       - name: Install dependencies
         run: npm ci
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
     
       - name: Set up config file
         run: |
           echo '${{secrets.CONFIG}}' > config/config.json
-          $lu = ./.github/workflows/setup-config.ps1 getlu
-          ./.github/workflows/setup-config.ps1 setlu $lu
+          $lu = .github/utils/setup-config.ps1 getlu
+          .github/utils/setup-config.ps1 setlu $lu
     
       - name: Run Playwright tests
-        run: ./download-invoices.ps1
+        run: download-invoices.ps1
     
       - name: Save run timestamp
-        run: ./.github/workflows/setup-config.ps1 savelu
+        run: .github/utils/setup-config.ps1 savelu
     
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

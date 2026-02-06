@@ -1,6 +1,6 @@
 function Get-LastUpdate {
-    if (Test-Path ".github/workflows/lastUpdate.txt") {
-        $lu = Get-Content ".github/workflows/lastUpdate.txt"
+    if (Test-Path ".github/data/lastUpdate.txt") {
+        $lu = Get-Content ".github/data/lastUpdate.txt"
         Write-Host "Ultima esecuzione recuperata: $lu"
         return $lu
     }
@@ -10,11 +10,11 @@ function Get-LastUpdate {
 
 function Save-LastUpdate {
     $newLu = Get-Date -Format "yyyy-MM-dd"
-    $newLu | Out-File -FilePath ".github/workflows/lastUpdate.txt" -Encoding utf8
+    $newLu | Out-File -FilePath ".github/data/lastUpdate.txt" -Encoding utf8
     Write-Host "Nuova ultima esecuzione salvata: $newLu"
     git config user.name "github-actions"
     git config user.email "github-actions@users.noreply.github.com"
-    git add .github/workflows/lastUpdate.txt
+    git add .github/data/lastUpdate.txt
     git commit -m "chore: update lastUpdate $env:GITHUB_RUN_NUMBER [skip ci]"
     git push
 }
