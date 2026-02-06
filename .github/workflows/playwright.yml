@@ -37,8 +37,8 @@ jobs:
       - name: Run tree
         shell: bash
         run: |
-          sudo apt-get update
-          sudo apt-get install -y tree
+          apt-get update
+          apt-get install -y tree
           tree .
     
       - name: Run Playwright tests
