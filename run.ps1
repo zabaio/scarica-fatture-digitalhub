@@ -22,8 +22,8 @@ if ((Get-Content test-results/.last-run.json | ConvertFrom-Json).status -eq "pas
     #Extract the xml files, store away the archives and clean
     Write-Output "Export successful. Extracting and archiving the downloaded files."
     Get-ChildItem $DOWNLOAD_DIR -Filter *.zip | Expand-Archive -DestinationPath $DOWNLOAD_DIR
-    robocopy $DOWNLOAD_DIR $CONFIG.dhXmlDir *.xml /xf *_MT_001.xml /xn | Out-Null
-    robocopy $DOWNLOAD_DIR $CONFIG.dhArchiveDir *.zip /mov | Out-Null
+    Get-ChildItem $DOWNLOAD_DIR *.xml -File | Where-Object Name -notlike "*_MT_001.xml" | Copy-Item -Dest $CONFIG.dhXmlDir -Force
+    Get-ChildItem $DOWNLOAD_DIR *.zip -File | Move-Item -Dest $CONFIG.dhArchiveDir -Force
     Remove-Item ${DOWNLOAD_DIR}* -Recurse -Force
 
     #Update the last export date in the config file
