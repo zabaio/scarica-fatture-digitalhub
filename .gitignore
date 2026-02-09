@@ -9,3 +9,5 @@ config/config.json
 /playwright/.cache/
 
 .github/workflows/playwright copy.yml
+
+.vscode/

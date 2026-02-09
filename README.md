@@ -26,7 +26,7 @@ Script per scaricare fatture xml dalla piattaforma DigitalHub di Zucchetti trami
     
 ## Uilizzo
 
-    powershell.exe ./download-invoices.ps1 -ExecutionPolicy Bypass
+    powershell.exe ./run.ps1 -ExecutionPolicy Bypass
 
 ## Funzionalità
 

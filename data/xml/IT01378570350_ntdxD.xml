@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><p:FatturaElettronica xmlns:p="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" versione="FPR12">
+  <FatturaElettronicaHeader>
+    <DatiTrasmissione>
+      <IdTrasmittente>
+        <IdPaese>IT</IdPaese>
+        <IdCodice>01378570350</IdCodice>
+      </IdTrasmittente>
+      <ProgressivoInvio>3346860092</ProgressivoInvio>
+      <FormatoTrasmissione>FPR12</FormatoTrasmissione>
+      <CodiceDestinatario>0000000</CodiceDestinatario>
+    </DatiTrasmissione>
+    <CedentePrestatore>
+      <DatiAnagrafici>
+        <IdFiscaleIVA>
+          <IdPaese>IT</IdPaese>
+          <IdCodice>01877220366</IdCodice>
+        </IdFiscaleIVA>
+        <CodiceFiscale>01877220366</CodiceFiscale>
+        <Anagrafica>
+          <Denominazione>SINERGAS S.P.A.</Denominazione>
+        </Anagrafica>
+        <RegimeFiscale>RF01</RegimeFiscale>
+      </DatiAnagrafici>
+      <Sede>
+        <Indirizzo>VIA GALASSO ALGHISI</Indirizzo>
+        <NumeroCivico>19</NumeroCivico>
+        <CAP>41012</CAP>
+        <Comune>CARPI</Comune>
+        <Provincia>MO</Provincia>
+        <Nazione>IT</Nazione>
+      </Sede>
+      <Contatti>
+        <Telefono>800038083</Telefono>
+      </Contatti>
+    </CedentePrestatore>
+    <CessionarioCommittente>
+      <DatiAnagrafici>
+        <IdFiscaleIVA>
+          <IdPaese>IT</IdPaese>
+          <IdCodice>00749430427</IdCodice>
+        </IdFiscaleIVA>
+        <CodiceFiscale>GSTPGV62C27A271V</CodiceFiscale>
+        <Anagrafica>
+          <Denominazione>GIUSTI PIERGIOVANNI</Denominazione>
+        </Anagrafica>
+      </DatiAnagrafici>
+      <Sede>
+        <Indirizzo>PIAZZA PILO ALBERTELLI</Indirizzo>
+        <NumeroCivico>3</NumeroCivico>
+        <CAP>60015</CAP>
+        <Comune>FALCONARA MARITTIMA</Comune>
+        <Provincia>AN</Provincia>
+        <Nazione>IT</Nazione>
+      </Sede>
+    </CessionarioCommittente>
+  </FatturaElettronicaHeader>
+  <FatturaElettronicaBody>
+    <DatiGenerali>
+      <DatiGeneraliDocumento>
+        <TipoDocumento>TD01</TipoDocumento>
+        <Divisa>EUR</Divisa>
+        <Data>2026-01-14</Data>
+        <Numero>2623015365</Numero>
+        <ImportoTotaleDocumento>34.73</ImportoTotaleDocumento>
+        <Causale>PLICO DI RIFERIMENTO N. 70000081143</Causale>
+        <Causale>SERVIZIO FATTURATO: ENERGIA ELETTRICA POD: IT001E60312634</Causale>
+        <Causale>LUOGO DI FORNITURA: PIAZZA PILO ALBERTELLI 3 60015 FALCONARA MARITTIMA AN</Causale>
+        <Causale>PERIODO FATTURATO: DAL 01/11/2025 AL 30/11/2025</Causale>
+      </DatiGeneraliDocumento>
+      <DatiContratto>
+        <IdDocumento>F-01225826</IdDocumento>
+      </DatiContratto>
+    </DatiGenerali>
+    <DatiBeniServizi>
+      <DettaglioLinee>
+        <NumeroLinea>1</NumeroLinea>
+        <Descrizione>Componente Disp BT-QV MT</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00000000</PrezzoUnitario>
+        <PrezzoTotale>0.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>2</NumeroLinea>
+        <Descrizione>Disp. art. 4-25.7 manc.prod. Perdite</Descrizione>
+        <Quantita>1.900000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00024800</PrezzoUnitario>
+        <PrezzoTotale>0.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>3</NumeroLinea>
+        <Descrizione>Disp. art.4-25.7 manc.prod.</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00024800</PrezzoUnitario>
+        <PrezzoTotale>0.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>4</NumeroLinea>
+        <Descrizione>Oneri di dispacciamento Art.3 Fte</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00066400</PrezzoUnitario>
+        <PrezzoTotale>0.01</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>5</NumeroLinea>
+        <Descrizione>Oneri di dispacciamento Art.3 Fte Perdite</Descrizione>
+        <Quantita>1.900000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00066400</PrezzoUnitario>
+        <PrezzoTotale>0.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>6</NumeroLinea>
+        <Descrizione>Oneri di dispacciamento Art.3 Modrid</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00238700</PrezzoUnitario>
+        <PrezzoTotale>0.05</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>7</NumeroLinea>
+        <Descrizione>Oneri di dispacciamento Art.3 Modrid Perdite</Descrizione>
+        <Quantita>1.900000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00238700</PrezzoUnitario>
+        <PrezzoTotale>0.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>8</NumeroLinea>
+        <Descrizione>Oneri di dispacciamento Art.3 Oth</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00000300</PrezzoUnitario>
+        <PrezzoTotale>0.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>9</NumeroLinea>
+        <Descrizione>Oneri di dispacciamento Art.3 Oth Perdite</Descrizione>
+        <Quantita>1.900000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00000300</PrezzoUnitario>
+        <PrezzoTotale>0.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>10</NumeroLinea>
+        <Descrizione>Oneri di dispacciamento Capacità</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00690800</PrezzoUnitario>
+        <PrezzoTotale>0.13</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>11</NumeroLinea>
+        <Descrizione>Oneri di dispacciamento art.3 Uess</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00208800</PrezzoUnitario>
+        <PrezzoTotale>0.04</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>12</NumeroLinea>
+        <Descrizione>Oneri di dispacciamento art.3 Uess Perdite</Descrizione>
+        <Quantita>1.900000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00208800</PrezzoUnitario>
+        <PrezzoTotale>0.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>13</NumeroLinea>
+        <Descrizione>Oneri di dispacciamento art.3 Uplift</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00441000</PrezzoUnitario>
+        <PrezzoTotale>0.08</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>14</NumeroLinea>
+        <Descrizione>Oneri di dispacciamento art.3 Uplift Perdite</Descrizione>
+        <Quantita>1.900000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00441000</PrezzoUnitario>
+        <PrezzoTotale>0.01</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>15</NumeroLinea>
+        <Descrizione>Perdite di Rete Indice F1</Descrizione>
+        <Quantita>0.500000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.12959060</PrezzoUnitario>
+        <PrezzoTotale>0.06</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>16</NumeroLinea>
+        <Descrizione>Perdite di Rete Indice F23</Descrizione>
+        <Quantita>1.400000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.11158260</PrezzoUnitario>
+        <PrezzoTotale>0.16</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>17</NumeroLinea>
+        <Descrizione>Perdite di Rete Spread F1</Descrizione>
+        <Quantita>0.500000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.02590000</PrezzoUnitario>
+        <PrezzoTotale>0.01</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>18</NumeroLinea>
+        <Descrizione>Perdite di Rete Spread F23</Descrizione>
+        <Quantita>1.400000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.02590000</PrezzoUnitario>
+        <PrezzoTotale>0.04</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>19</NumeroLinea>
+        <Descrizione>Sbilanciamento Con Perdite</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00000000</PrezzoUnitario>
+        <PrezzoTotale>0.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>20</NumeroLinea>
+        <Descrizione>Vendita Energia F1</Descrizione>
+        <Quantita>5.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.12959060</PrezzoUnitario>
+        <PrezzoTotale>0.65</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>21</NumeroLinea>
+        <Descrizione>Vendita Energia F23</Descrizione>
+        <Quantita>14.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.11158260</PrezzoUnitario>
+        <PrezzoTotale>1.56</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>22</NumeroLinea>
+        <Descrizione>Vendita Energia Spread F1</Descrizione>
+        <Quantita>5.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.02590000</PrezzoUnitario>
+        <PrezzoTotale>0.13</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>23</NumeroLinea>
+        <Descrizione>Vendita Energia Spread F23</Descrizione>
+        <Quantita>14.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.02590000</PrezzoUnitario>
+        <PrezzoTotale>0.36</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>24</NumeroLinea>
+        <Descrizione>Vendita Energia Verde</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00000000</PrezzoUnitario>
+        <PrezzoTotale>0.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>25</NumeroLinea>
+        <Descrizione>Quota fissa Commercializzazione</Descrizione>
+        <Quantita>0.082222</Quantita>
+        <UnitaMisura>Anno</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>144.00000000</PrezzoUnitario>
+        <PrezzoTotale>11.84</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>26</NumeroLinea>
+        <Descrizione>Tariffa DISPBT QF</Descrizione>
+        <Quantita>0.081228</Quantita>
+        <UnitaMisura>Anno</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>1.23110000</PrezzoUnitario>
+        <PrezzoTotale>0.10</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>27</NumeroLinea>
+        <Descrizione>Sconto SDD</Descrizione>
+        <Quantita>1.000000</Quantita>
+        <UnitaMisura>Nr.</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>-0.49000000</PrezzoUnitario>
+        <PrezzoTotale>-0.49</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>28</NumeroLinea>
+        <Descrizione>Componente SIGMA3 Variabile</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.01189000</PrezzoUnitario>
+        <PrezzoTotale>0.23</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>29</NumeroLinea>
+        <Descrizione>Componente T3 DIS Variabile</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00000000</PrezzoUnitario>
+        <PrezzoTotale>0.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>30</NumeroLinea>
+        <Descrizione>MIS3 Variabile</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00000000</PrezzoUnitario>
+        <PrezzoTotale>0.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>31</NumeroLinea>
+        <Descrizione>Quota Variabile-TRASE</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00000000</PrezzoUnitario>
+        <PrezzoTotale>0.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>32</NumeroLinea>
+        <Descrizione>UC3 parte variabile</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00156000</PrezzoUnitario>
+        <PrezzoTotale>0.03</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>33</NumeroLinea>
+        <Descrizione>UC6 parte variabile</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00007000</PrezzoUnitario>
+        <PrezzoTotale>0.00</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>34</NumeroLinea>
+        <Descrizione>SIGMA 1 Quota fissa</Descrizione>
+        <Quantita>0.082018</Quantita>
+        <UnitaMisura>Anno</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>22.80000000</PrezzoUnitario>
+        <PrezzoTotale>1.87</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>35</NumeroLinea>
+        <Descrizione>Tariffa SIGMA2 Quota potenza</Descrizione>
+        <Quantita>0.246411</Quantita>
+        <UnitaMisura>Anno</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>25.08000000</PrezzoUnitario>
+        <PrezzoTotale>6.18</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>36</NumeroLinea>
+        <Descrizione>UC6 Quota Fissa potenza</Descrizione>
+        <Quantita>0.251509</Quantita>
+        <UnitaMisura>Anno</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.19880000</PrezzoUnitario>
+        <PrezzoTotale>0.05</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>37</NumeroLinea>
+        <Descrizione>ARIM Quota Variabile</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.00164500</PrezzoUnitario>
+        <PrezzoTotale>0.03</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>38</NumeroLinea>
+        <Descrizione>ASOS Quota Variabile</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.02967700</PrezzoUnitario>
+        <PrezzoTotale>0.56</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>39</NumeroLinea>
+        <Descrizione>ASOS Quota fissa</Descrizione>
+        <Quantita>0.082191</Quantita>
+        <UnitaMisura>Anno</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>90.64200000</PrezzoUnitario>
+        <PrezzoTotale>7.45</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>40</NumeroLinea>
+        <Descrizione>Accisa Usi Domestici Non Residenti</Descrizione>
+        <Quantita>19.000000</Quantita>
+        <UnitaMisura>kWh</UnitaMisura>
+        <DataInizioPeriodo>2025-11-01</DataInizioPeriodo>
+        <DataFinePeriodo>2025-11-30</DataFinePeriodo>
+        <PrezzoUnitario>0.02270000</PrezzoUnitario>
+        <PrezzoTotale>0.43</PrezzoTotale>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <AltriDatiGestionali>
+          <TipoDato>POD</TipoDato>
+          <RiferimentoTesto>IT001E60312634</RiferimentoTesto>
+        </AltriDatiGestionali>
+      </DettaglioLinee>
+      <DatiRiepilogo>
+        <AliquotaIVA>10.00</AliquotaIVA>
+        <ImponibileImporto>31.57</ImponibileImporto>
+        <Imposta>3.16</Imposta>
+        <EsigibilitaIVA>I</EsigibilitaIVA>
+        <RiferimentoNormativo>10% IMPONIBILE</RiferimentoNormativo>
+      </DatiRiepilogo>
+    </DatiBeniServizi>
+    <DatiPagamento>
+      <CondizioniPagamento>TP02</CondizioniPagamento>
+      <DettaglioPagamento>
+        <ModalitaPagamento>MP19</ModalitaPagamento>
+        <DataScadenzaPagamento>2026-02-03</DataScadenzaPagamento>
+        <ImportoPagamento>34.73</ImportoPagamento>
+      </DettaglioPagamento>
+    </DatiPagamento>
+  </FatturaElettronicaBody>
+<ds:Signature Id="Signer-T-1768758656416"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2006/12/xml-c14n11"/><ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/><ds:Reference Id="r-doc-Signer-T-1768758656416" URI=""><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2002/06/xmldsig-filter2"><XPath xmlns="http://www.w3.org/2002/06/xmldsig-filter2" Filter="subtract">/descendant::ds:Signature</XPath></ds:Transform></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>Ps0H0LwuZcjW6V8jO52t0xYcAyl9INjf3zjcyT65ZZ4=</ds:DigestValue></ds:Reference><ds:Reference Type="http://uri.etsi.org/01903#SignedProperties" URI="#SignedProperties-Signer-T-1768758656416"><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>qLSGKJ81OtDdBMQLWcSsPLSifzFAU8pXW8/QOiwALvU=</ds:DigestValue></ds:Reference><ds:Reference Id="r-keyinfo-Signer-T-1768758656416" URI="#KeyInfo-Signer-T-1768758656416"><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><ds:DigestValue>F4RKmBufdyRDFc3qYzymAznyaeoUqpJt1INfBgNZ7eo=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue Id="SignatureValue-Signer-T-1768758656416">TNQUPFkAYaHHXFXiEJrlt+CaoA7mbBn43PozrW5lfTjtWtxsSRH6okNAJq7p6h7db+iBrsT0qvhp
+SVhV20Px1Q6Q0gqRCGGv/pWklIwQ+WDZMw4edEOIjG6FuFmRYHoI+rEF05SLcQRk/OPUQ/+GFne/
+38iwB/NgDi+TdTm1qMh6VGkNTGWH4pC5LzZfzwOHX0rzfYlEIhxCTtQHVzqNeFHezU0tCm05X2qK
+xdHdFYlucp9WdGceWYcm4ETHIWsG2/dzmLIb0/1yprKlSMmm/RaNHzxlNvEwLzmjjXyVkgEaXtWe
+5v00ANBQN7n7Md8dB5HuOsT1oUuAzwVyjhLNHw==</ds:SignatureValue><ds:KeyInfo Id="KeyInfo-Signer-T-1768758656416"><ds:X509Data><ds:X509Certificate>MIIH6TCCBdGgAwIBAgIIATQN1k7EkMkwDQYJKoZIhvcNAQELBQAwgbIxCzAJBgNVBAYTAklUMQ8w
+DQYDVQQHDAZBcmV6em8xGDAWBgNVBAoMD0FydWJhUEVDIFMucC5BLjEaMBgGA1UEYQwRVkFUSVQt
+MDE4NzkwMjA1MTcxKTAnBgNVBAsMIFF1YWxpZmllZCBUcnVzdCBTZXJ2aWNlIFByb3ZpZGVyMTEw
+LwYDVQQDDChBcnViYVBFQyBFVSBRdWFsaWZpZWQgQ2VydGlmaWNhdGVzIENBIEcxMB4XDTIzMTAw
+NjA4MTgxNVoXDTI2MTAwNjA4MTgxNVowgZExCzAJBgNVBAYTAklUMRIwEAYDVQQEDAlCRU5FRk9S
+VEkxETAPBgNVBCoMCFZJVFRPUklPMR8wHQYDVQQFExZUSU5JVC1CTkZWVFI3MUIyOEYyNTdUMRsw
+GQYDVQQDDBJWSVRUT1JJTyBCRU5FRk9SVEkxHTAbBgNVBC4TFFdTUkVGLTEwNjI0MjgyNTQzMTAy
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoDwTZ3KWQrKMsfTHPjyxvbgvaLR1o+2F
+w84AP848+PLxFvTNE6HbioVRDIW/XxphbCl1QJTXWjPj+vT/jAIcXOBJRYjL0IQgw1Iz2Zw1HCzt
+WQxNCQX9uCM/pfhSJ9rBnI6dqayLboXI5g7rvY8XBb6OnpHRqyYGLduGaBTJbA4ozZJUVrnlC2Ap
+50a34oekvXyBl4C5+YfkKZYzEeIxj7ojVNXkZHjG2k6Ds1tfRGlBsT+CHMvUqbwxrQF+gg2Rk01r
+orzKcPvmY04CGiXrWIMIv2qNerFDJaC836OBz2rsF/LKb8lakj0vvQf1UrTeXI24nWMUSZmydwjl
+JRDYfQIDAQABo4IDIDCCAxwwfwYIKwYBBQUHAQEEczBxMDgGCCsGAQUFBzAChixodHRwOi8vY2Fj
+ZXJ0LnBlYy5pdC9jZXJ0cy9hcnViYXBlYy1laWRhcy1nMTA1BggrBgEFBQcwAYYpaHR0cDovL29j
+c3AwMS5wZWMuaXQvdmEvYXJ1YmFwZWMtZWlkYXMtZzEwHQYDVR0OBBYEFFW6aDXyCEqkxoWGVPB9
+9SRP1fFmMB8GA1UdIwQYMBaAFMZvO4V70SaxeJpCpCVpDPb/eqBnMBsGA1UdEgQUMBKBEGluZm9A
+YXJ1YmFwZWMuaXQwgb8GCCsGAQUFBwEDBIGyMIGvMAgGBgQAjkYBATALBgYEAI5GAQMCARQwCAYG
+BACORgEEMIGLBgYEAI5GAQUwgYAwPhY4aHR0cHM6Ly93d3cucGVjLml0L3JlcG9zaXRvcnkvYXJ1
+YmFwZWMtcXVhbGlmLXBkcy1pdC5wZGYTAml0MD4WOGh0dHBzOi8vd3d3LnBlYy5pdC9yZXBvc2l0
+b3J5L2FydWJhcGVjLXF1YWxpZi1wZHMtZW4ucGRmEwJlbjCCASkGA1UdIASCASAwggEcMAkGBwQA
+i+xAAQIwggEFBgsrBgEEAYHoLQEHAjCB9TBBBggrBgEFBQcCARY1aHR0cHM6Ly93d3cucGVjLml0
+L3JlcG9zaXRvcnkvYXJ1YmFwZWMtcXVhbGlmLWNwcy5wZGYwga8GCCsGAQUFBwICMIGiDIGfSWwg
+cHJlc2VudGUgY2VydGlmaWNhdG8gw6ggdmFsaWRvIHNvbG8gcGVyIGZpcm1lIGFwcG9zdGUgY29u
+IHByb2NlZHVyYSBhdXRvbWF0aWNhLiBUaGUgY2VydGlmaWNhdGUgbWF5IG9ubHkgYmUgdXNlZCBm
+b3IgdW5hdHRlbmRlZC9hdXRvbWF0aWMgZGlnaXRhbCBzaWduYXR1cmUuMAYGBCtMEAYwPQYDVR0f
+BDYwNDAyoDCgLoYsaHR0cDovL2NybDAxLnBlYy5pdC92YS9hcnViYXBlYy1laWRhcy1nMS9jcmww
+DgYDVR0PAQH/BAQDAgZAMA0GCSqGSIb3DQEBCwUAA4ICAQAjVNM1GqNJ550MJWwQF6mTEDxZzHW3
+uJYd3v/sNXGyI2wj5pEtRtaqaUoGuoJ+O3S8U81Zg71qeyHMJKbCFrhRuJsrJ33GjeOICe510pkQ
+RuqFjpD5/rb05sLP5YtihUcm1LcixhUSeBN6y7kRhp0ZYhBlsao7RoIDM5yXpzfMiO57pNgypIrH
+K0bBNBPvBHD4/V9T0Zc3RsOg6G0t8xgP+8/vo9LGz5x2CFQE+D79dZk+zhu8NJp/o+psOG9BzR6P
+yNaZy8H9n5WenLtwHrc2uJy6XsXihfo12tOlYLzg/1LjKH1FWqhW/EB1nPTFz6KwT4zNLQD4UeyT
+RdBvLUHWeZdG2BhUK4MnKlKbXYjX9Zj8KMUBrbhah5pPzBhZowpkyiIybULUvHrAFsn8sJfhrzV+
+BF/Yp4bgQgO2I2Ma2CRjZbOVggmuNQwK44KLkfR6CqqaT/UKrInqjk0zlUELmm1mrf1pSnRIVYpV
+gIcFbYiQF2xZ+dWFZMAdOF3BAPWhGSwWP+qyUvgDV7ES8+bsn9coBAoJpr9bfF5XK/S7CNeGto1N
+Yg+C0QQK9A+KdW7ZxUCy1Sc8+1H9Qt59JyaVBNxGrH8T4u+GO0F4a2zj9XfRRjtoj1OrxIx3UXD2
+iTliTIQ58aDYfnjGJUqK3MIGyjj+OKU8RhkaqW7NG8Bx7w==</ds:X509Certificate></ds:X509Data></ds:KeyInfo><ds:Object><xades:QualifyingProperties xmlns:xades="http://uri.etsi.org/01903/v1.3.2#" Target="#Signer-T-1768758656416">
+		<xades:SignedProperties Id="SignedProperties-Signer-T-1768758656416">
+			<xades:SignedSignatureProperties>
+				<xades:SigningTime>2026-01-18T18:50:56+01:00</xades:SigningTime>
+				<xades:SigningCertificate>
+					<xades:Cert>
+						<xades:CertDigest>
+							<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+							<ds:DigestValue>JJB57JRBK1dB5CqmpD8h61phd9UrDmLCleOLBCQL1q8=</ds:DigestValue>
+						</xades:CertDigest>
+						<xades:IssuerSerial><ds:X509IssuerName>CN=ArubaPEC EU Qualified Certificates CA G1,OU=Qualified Trust Service Provider,2.5.4.97=#0c1156415449542d3031383739303230353137,O=ArubaPEC S.p.A.,L=Arezzo,C=IT</ds:X509IssuerName><ds:X509SerialNumber>86709506922549449</ds:X509SerialNumber></xades:IssuerSerial>
+					</xades:Cert>
+				</xades:SigningCertificate>
+			</xades:SignedSignatureProperties>
+		
+			<xades:SignedDataObjectProperties>
+				<xades:DataObjectFormat ObjectReference="#r-doc-Signer-T-1768758656416">
+					<xades:MimeType>text/xml</xades:MimeType>
+				</xades:DataObjectFormat>
+			
+				<xades:DataObjectFormat ObjectReference="#r-keyinfo-Signer-T-1768758656416">
+					<xades:MimeType>text/xml</xades:MimeType>
+				</xades:DataObjectFormat>
+			</xades:SignedDataObjectProperties>
+		</xades:SignedProperties>
+	</xades:QualifyingProperties></ds:Object></ds:Signature></p:FatturaElettronica>

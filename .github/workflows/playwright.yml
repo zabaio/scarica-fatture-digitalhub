@@ -24,9 +24,9 @@ jobs:
       
       - uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: 20
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --ignore-scripts
     
       - name: Set up config file
         run: |
@@ -42,7 +42,7 @@ jobs:
           tree .
     
       - name: Run Playwright tests
-        run: ./download-invoices.ps1
+        run: ./run.ps1
     
       - name: Save run timestamp
         run: .github/utils/setup-config.ps1 savelu
