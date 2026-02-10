@@ -29,7 +29,9 @@ jobs:
         run: npm ci --ignore-scripts
     
       - name: Retrieve config secret
-        run: echo '${{secrets.CONFIG}}' > config/config.json
+        env:
+          CONFIG_JSON: ${{ secrets.CONFIG }}
+        run: $env:CONFIG_JSON | Out-File -FilePath config/config.json
           
       - name: Retrieve and set last update
         run: |
