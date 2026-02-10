@@ -19,11 +19,11 @@ export const ConfigSchema = z.object({
     .date()
     .default("2019-01-01"),
 
-  dhExportMaxPeriod: z.number()
+  dhMaxChunkSize: z.number()
     .describe("The maximum number of days each export operation can cover")
     .int()
-    .min(0)
-    .max(59)
+    .min(1)
+    .max(60)
     .default(30),
   
   dhXmlDir: z.string()
@@ -53,4 +53,6 @@ function main(){
   console.log(`✓ JSON Schema generated at: ${schemaPath}`);
 }
 
-main();
+if (require.main === module) {
+    main();
+}

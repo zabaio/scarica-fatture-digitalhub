@@ -1,7 +1,6 @@
 import dayjs from 'dayjs';
 import path from 'path';
 
-export const DOWNLOAD_DIR = path.join(process.cwd(), "data", "downloads");
 export const CONFIG_PATH = path.join(process.cwd(), "config", "config.json");
 
 //Utility formatting

@@ -7,7 +7,6 @@ function Get-LastUpdate {
     Write-Host "Nessun file trovato."
     return $null
 }
-
 function Save-LastUpdate {
     $newLu = Get-Date -Format "yyyy-MM-dd"
     $newLu | Out-File -FilePath ".github/data/lastUpdate.txt" -Encoding utf8
@@ -18,7 +17,6 @@ function Save-LastUpdate {
     git commit -m "chore: update lastUpdate $env:GITHUB_RUN_NUMBER [skip ci]"
     git push
 }
-
 function Set-LastUpdate{
     Set-Variable CONFIG_PATH config/config.json
     Set-Variable CONFIG (Get-Content $CONFIG_PATH -Raw -ErrorAction Stop | ConvertFrom-Json)

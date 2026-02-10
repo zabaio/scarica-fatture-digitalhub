@@ -1,45 +1,40 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import dayjs from 'dayjs';
+import AdmZip from 'adm-zip';
+import { CONFIG_PATH } from '@shared/utils';
 import { loadConfig, Config } from '@shared/schema-generator';
-import { CONFIG_PATH, DOWNLOAD_DIR } from '@shared/utils';
-
-async function downloadInvoices(config: Config): Promise<boolean> {
-  try {
-    // TODO: Implement your DigitalHub automation logic
-    return true;
-  } catch (error) {
-    console.error('Error during download:', error);
-    return false;
-  }
-}
+import { playConfig } from '@shared/playwright-config'
+import { startScraper, login, logout } from '@shared/navigation';
+import { chromium } from '@playwright/test';
+const tempDir =  path.join(process.cwd(), "data", "temp");
 
 function processDownloadedFiles(config: Config): void {
-  const AdmZip = require('adm-zip');
   const { dhXmlDir, dhArchiveDir } = config;
-  
   // Extract ZIPs
-  fs.readdirSync(DOWNLOAD_DIR)
+  console.log("Extracting archives...")
+  fs.readdirSync(tempDir)
     .filter(f => f.endsWith('.zip'))
-    .forEach(f => new AdmZip(path.join(DOWNLOAD_DIR, f)).extractAllTo(DOWNLOAD_DIR, true));
+    .forEach(f => new AdmZip(path.join(tempDir, f)).extractAllTo(tempDir, true));
   
   // Copy XMLs (excluding *_MT_001.xml) and move ZIPs to archive
-  fs.readdirSync(DOWNLOAD_DIR).forEach(f => {
-    const src = path.join(DOWNLOAD_DIR, f);
-    if (f.endsWith('.xml') && !f.includes('_MT_001.xml'))
+  console.log("Saving xmls and archives...")
+  fs.readdirSync(tempDir).forEach(f => {
+    const src = path.join(tempDir, f);
+    if (f.includes('.xml') && !f.endsWith('_MT_001.xml'))
       fs.copyFileSync(src, path.join(dhXmlDir, f));
     else if (f.endsWith('.zip'))
       fs.renameSync(src, path.join(dhArchiveDir, f));
   });
   
-  // Delete download directory
-  fs.rmSync(DOWNLOAD_DIR, { recursive: true, force: true });
+  // Delete temp directory
+  fs.rmSync(tempDir, { recursive: true, force: true });
 }
 
 // Update config with new date
-function updateConfig(config: Config): void {
+function updateConfig(config: Config, newLastUpdate: dayjs.Dayjs): void {
   console.log('Updating date of last update in config.');
-  config.dhLastUpdate = dayjs().format('YYYY-MM-DD');
+  config.dhLastUpdate = newLastUpdate.format("YYYY-MM-DD");
   fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2));
   console.log('Done.');
 }
@@ -48,20 +43,31 @@ function updateConfig(config: Config): void {
 async function main(): Promise<void> {
   const config = loadConfig(CONFIG_PATH);
   
-  fs.rmSync(DOWNLOAD_DIR, { recursive: true, force: true });
-  fs.mkdirSync(DOWNLOAD_DIR, { recursive: true });
+  fs.rmSync(tempDir, { recursive: true, force: true });
+  fs.mkdirSync(tempDir, { recursive: true });
   fs.mkdirSync(config.dhXmlDir, { recursive: true});
   fs.mkdirSync(config.dhArchiveDir, { recursive: true});
   
-  const success = await downloadInvoices(config);
-  
-  if (success) {
-    processDownloadedFiles(config);
-    updateConfig(config);
-  } else {
+  const browser = await chromium.launch(playConfig.launchOptions);
+  const context = await browser.newContext({ viewport: playConfig.viewport });
+  context.setDefaultTimeout(playConfig.timeouts.navigation);
+  const page = await context.newPage();
+
+  let newLastUpdate: dayjs.Dayjs;
+  try {
+    newLastUpdate = await startScraper(page, config, tempDir);
+    browser.close();
+  } 
+  catch (error) {
+    console.error('Unhandled error:', error);
+    await page.screenshot({path: "screenshot.png"})
+    await browser.close();
     console.error('The export operation has encountered a critical problem.');
     process.exit(1);
   }
+
+  processDownloadedFiles(config);
+  updateConfig(config, newLastUpdate);
 }
 
 main().catch((error) => {

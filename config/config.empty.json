@@ -3,7 +3,7 @@
     "dhPassword":  "",
     "dhCessionari":  [""],
     "dhLastUpdate":  "2019-01-01",
-    "dhExportMaxPeriod":  30,
+    "dhMaxChunkSize":  30,
     "dhXmlDir":  "data/xml/",
     "dhArchiveDir":  "data/archives/"
 }

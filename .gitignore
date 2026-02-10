@@ -11,3 +11,4 @@ config/config.json
 .github/workflows/playwright copy.yml
 
 .vscode/
+/data/

@@ -1,46 +1,50 @@
-import test from '@playwright/test';
+import { test, expect} from '@playwright/test';
 import dayjs from 'dayjs';
-import path from 'path';
-import * as nav from '@shared/navigation';
-import { formatArchiveFilename, CONFIG_PATH, DOWNLOAD_DIR } from '@shared/utils'
-import { loadConfig } from '@shared/schema-generator'
+import * as fs from "fs";
+import * as nav from 'src/shared/navigation';
+import { CONFIG_PATH} from 'src/shared/utils';
+import { loadConfig, Config} from 'src/shared/schema-generator';
 
-test.use({viewport:{width:1920,height:1080}})
-const config = loadConfig(CONFIG_PATH);
+let config: Config;
 
-test.beforeEach(async ({page}) => {
-  await nav.login(page, config);
+test.beforeEach(async ({}, testInfo) => {
+  config = loadConfig(CONFIG_PATH);
+  config.dhLastUpdate = dayjs().subtract(0, 'day').format("YYYY-MM-DD");
+  config.dhXmlDir = testInfo.outputPath("data", "xml");
+  config.dhArchiveDir = testInfo.outputPath("data", "archives");
+  config.dhMaxChunkSize = 1;
+})
+
+
+test.afterEach(async ({ page, context }) => {
+  // Close page first
+  if (page && !page.isClosed()) {
+    await page.close();
+  }
+  // Then close context
+  if (context) {
+    await context.close();
+  }
+  // Add a small delay to allow file handles to release
+  await new Promise(resolve => setTimeout(resolve, 1000));
 });
 
-test.afterEach(async ({page}) => {
+test('log-in-out', async ({page}) => {
+  await nav.login(page, config);
   await nav.logout(page);
 })
 
-test('log-in-out', async ({page}) => {})
-
 test('navigate-and-fill', async ({page}) =>{
+  await nav.login(page, config);
   await nav.goToExportForm(page);
   await nav.fillExportForm(page, config.dhCessionari[0], dayjs(), dayjs());
   await page.getByTitle('Close layer').click();
+  await nav.logout(page);
 })
 
-test('download-invoices', async ({page}) => {
-
-  //For each time period equal or shorter than config.dhExportMaxPeriod days between the last update and today
-  const currentDate = dayjs();
-  for (let startDate = dayjs(config.dhLastUpdate); startDate < currentDate;){
-    let endDate = startDate.add(config.dhExportMaxPeriod, 'day');
-    endDate = (endDate < currentDate) ? endDate : currentDate;
-
-    //For each cessionario
-    for (const cessionario of config.dhCessionari){
-      const archiveFilename = formatArchiveFilename(cessionario, startDate, endDate, currentDate);
-      console.log("Exporting "+ archiveFilename + "...");
-      await nav.goToExportForm(page);
-      await nav.fillExportForm(page, cessionario, startDate, endDate);      
-      await nav.exportAndDownload(page, path.join(DOWNLOAD_DIR, archiveFilename));
-    }
-    //Go to the next export period
-    startDate = startDate.add(config.dhExportMaxPeriod, 'day');
-  }
+test('download-invoices', async ({page}, testInfo) => {
+  const tempDir = testInfo.outputPath("data", "temp");
+  fs.mkdirSync(tempDir, { recursive: true });
+  const newLastUpdate = await nav.startScraper(page, config, tempDir);
+  expect(newLastUpdate.isSame(dayjs()));
 });

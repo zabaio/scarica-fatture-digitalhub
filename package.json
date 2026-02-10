@@ -4,10 +4,9 @@
   "main": "src/main.ts",
   "scripts": {
     "postinstall": "playwright install chromium --with-deps",
-    "start": "ts-node src/main.ts",
-
-    "dev:test": "playwright test --config=test/playwright.config.ts",
-    "dev:generate-schema": "ts-node shared/schema-generator.ts"
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "dev:test": "playwright test --reporter=list --workers=1 --headed --trace on --config=test/tests.config.ts",
+    "dev:generate-schema": "ts-node src/shared/schema-generator.ts"
   },
   "author": "zabaio",
   "license": "MIT",
@@ -15,12 +14,15 @@
     "node": ">=20.20.0"
   },
   "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
     "@types/node": "^20.19.33"
   },
   "dependencies": {
-    "dayjs": "^1.11.13",
     "@playwright/test": "^1.58.2",
+    "adm-zip": "^0.5.16",
+    "dayjs": "^1.11.13",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.9",
     "zod": "^4.3.6"
   }
