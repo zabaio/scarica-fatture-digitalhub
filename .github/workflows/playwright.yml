@@ -34,15 +34,15 @@ jobs:
           $lu = .github/utils/setup-config.ps1 getlu
           .github/utils/setup-config.ps1 setlu $lu
       
-      - name: Run tree
-        shell: bash
-        run: |
-          apt-get update
-          apt-get install -y tree
-          tree .
+      #- name: Run tree
+      #  shell: bash
+      #  run: |
+      #    apt-get update
+      #    apt-get install -y tree
+      #    tree .
     
       - name: Run Playwright tests
-        run: ./run.ps1
+        run: npm run dev:tests
     
       - name: Save run timestamp
         run: .github/utils/setup-config.ps1 savelu
