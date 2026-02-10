@@ -11,6 +11,7 @@ function Save-LastUpdate {
     $newLu = Get-Date -Format "yyyy-MM-dd"
     $newLu | Out-File -FilePath ".github/data/lastUpdate.txt" -Encoding utf8
     Write-Host "Nuova ultima esecuzione salvata: $newLu"
+    git config --global safe.directory '*'
     git config user.name "github-actions"
     git config user.email "github-actions@users.noreply.github.com"
     git add .github/data/lastUpdate.txt

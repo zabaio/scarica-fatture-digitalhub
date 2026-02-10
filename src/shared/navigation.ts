@@ -11,8 +11,11 @@ dayjs.extend(minMax)
 export async function login (page: Page, config: Config){
   //Login
   console.log("Logging in...");
+
   await page.goto('https://digitalhub.zucchetti.it/');
+  
   while (page.url().startsWith("https://digitalhub.zucchetti.it/fatelw/jsp/login.jsp")){
+  
     await page.getByRole('textbox', { name: 'Username' }).fill(config.dhUsername);
     await page.getByRole('textbox', { name: 'Password' }).fill(config.dhPassword);
     await page.getByRole('button', { name: /^Accedi$|^Forza accesso$/ }).click();
@@ -25,6 +28,7 @@ export async function login (page: Page, config: Config){
 export async function logout (page: Page){
   //Logout
   console.log("Logging out...");
+  
   await page.waitForTimeout(2000);
   await page.locator("[id$='_imgNoPhoto']").click();
   await page.locator("[id$='_imgExit']").waitFor({ state: 'visible' });
@@ -34,6 +38,7 @@ export async function logout (page: Page){
 export async function goToExportForm(page: Page){
   //In Homepage
   console.log("Navigating to export form...");
+  
   const mainFrame = page.frameLocator('iframe[name="Main"]');
   await mainFrame.locator("[id$='_imgFP']").click();
   await mainFrame.locator("[id$='_expMonth']").click();
@@ -44,6 +49,7 @@ export async function fillExportForm(page: Page, cessionario: string, startDate:
   //In Homepage\Fatturazione Passiva\Esportazione Massiva
   //Fill the request for the current cessionario and period
   console.log("Filling export form...")
+  
   const modalFrame = page.frameLocator("[id^='spModalLayerRef_']:visible");
 
   await modalFrame.locator("[id$='_CEDENOM']").fill(cessionario);
@@ -55,6 +61,7 @@ export async function exportAndDownload (page: Page, downloadPath: string){
   //In Homepage\Fatturazione Passiva\Esportazione Massiva
   //Export and check if the request yields any results
   console.log("Requesting export...");
+  
   const modalFrame = page.frameLocator("[id^='spModalLayerRef_']");
   await modalFrame.getByRole('link', { name: /^Esporta/ }).click();    
   const gestioneEsportazioniButton = modalFrame.getByRole('link', { name: /^Gestione Esportazioni/ });
@@ -64,16 +71,20 @@ export async function exportAndDownload (page: Page, downloadPath: string){
   if (await nessunFileDialog.isVisible()){
     //If it doesn't, go back to Fatturazione Passiva
     console.log("No available invoices with the selected parameters - skipped.")
+  
     await page.getByTitle('Close layer').click();
   }else {
     //If it does, to Gestione Esportazioni and for the export to complete
-    console.log("Navigating to export manager...")
+    console.log("Navigating to export manager...")  
     await gestioneEsportazioniButton.click();
+  
     console.log("Waiting for export...")
     const endTime = Date.now() + 300_000;
     const mainFrame = page.frameLocator('iframe[name="Main"]');
     const statusLocator = mainFrame.locator("[id$='_gridZip_0_9_viewDiv']");
+  
     while (Date.now() < endTime) {
+  
       await statusLocator.waitFor({ state: 'visible', timeout: 7500 });
       if (await statusLocator.innerText() === 'Disponibile'){
         console.log("Export ready.")

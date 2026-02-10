@@ -15,20 +15,6 @@ test.beforeEach(async ({}, testInfo) => {
   config.dhMaxChunkSize = 1;
 })
 
-
-test.afterEach(async ({ page, context }) => {
-  // Close page first
-  if (page && !page.isClosed()) {
-    await page.close();
-  }
-  // Then close context
-  if (context) {
-    await context.close();
-  }
-  // Add a small delay to allow file handles to release
-  await new Promise(resolve => setTimeout(resolve, 1000));
-});
-
 test('log-in-out', async ({page}) => {
   await nav.login(page, config);
   await nav.logout(page);

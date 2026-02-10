@@ -1,7 +1,7 @@
 name: Publish Docker Image
 on:
   push:
-    branches: ['main', 'refactoring-to-just-nodejs'] # Crea l'immagine quando fai push su main
+    branches: ['main'] # Crea l'immagine quando fai push su main
     paths:
       - '.github/docker/Dockerfile'    # Esegui solo se il Dockerfile cambia
 
