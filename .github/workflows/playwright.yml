@@ -33,10 +33,10 @@ jobs:
           CONFIG_JSON: ${{ secrets.CONFIG }}
         run: $env:CONFIG_JSON | Out-File -FilePath config/config.json
           
-      - name: Retrieve and set last update
-        run: |
-          $lu = .github/utils/setup-config.ps1 getlu
-          .github/utils/setup-config.ps1 setlu $lu
+      #- name: Retrieve and set last update
+      #  run: |
+      #    $lu = .github/utils/setup-config.ps1 getlu
+      #    .github/utils/setup-config.ps1 setlu $lu
       
       #- name: Run tree
       #  shell: bash
