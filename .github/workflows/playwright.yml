@@ -1,9 +1,9 @@
 name: Playwright Tests
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, master, refactoring-to-just-nodejs ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, master, refactoring-to-just-nodejs ]
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * 0'
@@ -28,9 +28,11 @@ jobs:
       - name: Install dependencies
         run: npm ci --ignore-scripts
     
-      - name: Set up config file
+      - name: Retrieve config secret
+        run: echo '${{secrets.CONFIG}}' > config/config.json
+          
+      - name: Retrieve and set last update
         run: |
-          echo '${{secrets.CONFIG}}' > config/config.json
           $lu = .github/utils/setup-config.ps1 getlu
           .github/utils/setup-config.ps1 setlu $lu
       
