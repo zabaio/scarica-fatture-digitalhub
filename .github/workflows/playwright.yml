@@ -46,7 +46,7 @@ jobs:
       #    tree .
     
       - name: Run Playwright tests
-        run: npm run dev:tests
+        run: npm run dev:test
     
       - name: Save run timestamp
         run: .github/utils/setup-config.ps1 savelu
