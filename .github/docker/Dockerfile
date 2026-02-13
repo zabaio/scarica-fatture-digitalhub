@@ -8,5 +8,4 @@ RUN apt-get update && apt-get install -y wget apt-transport-https software-prope
     apt-get update && apt-get install -y powershell && \
     rm -rf /var/lib/apt/lists/*
 
-# Verifica installazione (opzionale)
-RUN pwsh -Command '$PSVersionTable'
+RUN curl https://rclone.org/install.sh | bash

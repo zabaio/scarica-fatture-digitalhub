@@ -14,7 +14,7 @@ export const ConfigSchema = z.object({
     .describe('The list of Cessionari whose invoices you want to download')
     .min(1),
 
-  dhLastUpdate: z.string()
+  dhLastDayDownloaded: z.string()
     .describe('First run: date of first invoice. After that: day of the last successful update operation. - yyyy-MM-dd')
     .date()
     .default("2019-01-01"),

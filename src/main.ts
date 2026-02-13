@@ -2,11 +2,11 @@ import * as fs from 'fs';
 import * as path from 'path';
 import dayjs from 'dayjs';
 import AdmZip from 'adm-zip';
-import { CONFIG_PATH } from '@shared/utils';
 import { loadConfig, Config } from '@shared/schema-generator';
 import { playConfig } from '@shared/playwright-config'
 import { startScraper, login, logout } from '@shared/navigation';
 import { chromium } from '@playwright/test';
+export const configPath = path.join(process.cwd(), "config", "config.json");
 const tempDir =  path.join(process.cwd(), "data", "temp");
 
 function processDownloadedFiles(config: Config): void {
@@ -34,14 +34,13 @@ function processDownloadedFiles(config: Config): void {
 // Update config with new date
 function updateConfig(config: Config, newLastUpdate: dayjs.Dayjs): void {
   console.log('Updating date of last update in config.');
-  config.dhLastUpdate = newLastUpdate.format("YYYY-MM-DD");
-  fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2));
+  config.dhLastDayDownloaded = newLastUpdate.format("YYYY-MM-DD");
+  fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
   console.log('Done.');
 }
 
 // Main function
-async function main(): Promise<void> {
-  const config = loadConfig(CONFIG_PATH);
+export async function main(config: Config): Promise<void> {
   
   fs.rmSync(tempDir, { recursive: true, force: true });
   fs.mkdirSync(tempDir, { recursive: true });
@@ -70,7 +69,7 @@ async function main(): Promise<void> {
   updateConfig(config, newLastUpdate);
 }
 
-main().catch((error) => {
+main(loadConfig(configPath)).catch((error) => {
   console.error('Unhandled error:', error);
   process.exit(1);
 });

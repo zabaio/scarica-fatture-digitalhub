@@ -1,7 +1,4 @@
 import dayjs from 'dayjs';
-import path from 'path';
-
-export const CONFIG_PATH = path.join(process.cwd(), "config", "config.json");
 
 //Utility formatting
 export function formatDMY(date: dayjs.Dayjs){ return date.format('DD-MM-YYYY'); }

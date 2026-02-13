@@ -17,7 +17,7 @@ Script per scaricare fatture xml dalla piattaforma DigitalHub di Zucchetti trami
         "dhUsername" = <Nome utente DigitalHub>,
         "dhPassword" = <Password DigitalHub>,
         "dhCessionari" = [<Nome Cessionario 1>, ...],
-        "dhLastUpdate" = <Data di inizio ricerca / ultimo aggiornamento>,
+        "dhLastDayDownloaded" = <Data di inizio ricerca / ultimo aggiornamento>,
         "dhMaxChunkSize" = <Durata massima in giorni di ciascuna esportazione>,
         "dhXmlDir" = <Cartella di destinazione delle fatture>,
         ...

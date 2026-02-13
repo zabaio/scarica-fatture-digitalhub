@@ -2,14 +2,15 @@ import { test, expect} from '@playwright/test';
 import dayjs from 'dayjs';
 import * as fs from "fs";
 import * as nav from 'src/shared/navigation';
-import { CONFIG_PATH} from 'src/shared/utils';
 import { loadConfig, Config} from 'src/shared/schema-generator';
+import * as path from "path"
 
+const testConfigPath = path.join(process.cwd(), "config", "test-config.json");
 let config: Config;
 
 test.beforeEach(async ({}, testInfo) => {
-  config = loadConfig(CONFIG_PATH);
-  config.dhLastUpdate = dayjs().subtract(0, 'day').format("YYYY-MM-DD");
+  config = loadConfig(testConfigPath);
+  config.dhLastDayDownloaded = dayjs().subtract(2, 'day').format("YYYY-MM-DD");
   config.dhXmlDir = testInfo.outputPath("data", "xml");
   config.dhArchiveDir = testInfo.outputPath("data", "archives");
   config.dhMaxChunkSize = 1;

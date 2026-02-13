@@ -108,7 +108,7 @@ export async function exportAndDownload (page: Page, downloadPath: string){
 export async function startScraper(page: Page, config: Config, tempDir: string): Promise<dayjs.Dayjs> {
   
   //For each time period equal or shorter than config.dhMaxChunkSize days between the last update and today
-  let startDate = dayjs(config.dhLastUpdate);
+  let startDate = dayjs(config.dhLastDayDownloaded).add(1,"day");
   let endDate: dayjs.Dayjs;
   const today = dayjs();
   await login(page, config);

@@ -18,7 +18,7 @@
       },
       "description": "The list of Cessionari whose invoices you want to download"
     },
-    "dhLastUpdate": {
+    "dhLastDayDownloaded": {
       "default": "2019-01-01",
       "type": "string",
       "format": "date",
@@ -45,7 +45,7 @@
     "dhUsername",
     "dhPassword",
     "dhCessionari",
-    "dhLastUpdate",
+    "dhLastDayDownloaded",
     "dhMaxChunkSize",
     "dhXmlDir",
     "dhArchiveDir"
