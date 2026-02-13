@@ -2,7 +2,7 @@
 FROM mcr.microsoft.com/playwright:v1.58.2-jammy
 
 # Installazione di PowerShell Core
-RUN apt-get update && apt-get install -y wget apt-transport-https software-properties-common && \
+RUN apt-get update && apt-get install -y wget apt-transport-https software-properties-common unzip && \
     wget -q "https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb" && \
     dpkg -i packages-microsoft-prod.deb && \
     apt-get update && apt-get install -y powershell && \
