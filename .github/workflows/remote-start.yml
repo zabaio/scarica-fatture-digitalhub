@@ -37,6 +37,13 @@ jobs:
       - name: Run main
         run: npm remote:start
 
+      - name: Upload files to rclone remote
+        env:
+          RCLONE_CONFIG: ${{ secrets.RCLONE_CONFIG }}
+        run: |
+          $env:RCLONE_CONFIG | Out-File ./config/rclone.conf
+          rclone copy ./data remote-folder: --config ./config/rclone.conf
+
       - name: Save to workflow branch
         run: |
           git fetch origin workflow && git checkout workflow
