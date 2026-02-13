@@ -1,0 +1,37 @@
+import { test, expect} from '@playwright/test';
+import dayjs from 'dayjs';
+import * as fs from "fs";
+import * as nav from 'src/shared/navigation';
+import { loadConfig, Config} from 'src/shared/schema-generator';
+import * as path from "path"
+
+const testConfigPath = path.join(process.cwd(), "config", "test-config.json");
+let config: Config;
+
+test.beforeEach(async ({}, testInfo) => {
+  config = loadConfig(testConfigPath);
+  config.dhLastDayDownloaded = dayjs().subtract(2, 'day').format("YYYY-MM-DD");
+  config.dhXmlDir = testInfo.outputPath("data", "xml");
+  config.dhArchiveDir = testInfo.outputPath("data", "archives");
+  config.dhMaxChunkSize = 1;
+})
+
+test('log-in-out', async ({page}) => {
+  await nav.login(page, config);
+  await nav.logout(page);
+})
+
+test('navigate-and-fill', async ({page}) =>{
+  await nav.login(page, config);
+  await nav.goToExportForm(page);
+  await nav.fillExportForm(page, config.dhCessionari[0], dayjs(), dayjs());
+  await page.getByTitle('Close layer').click();
+  await nav.logout(page);
+})
+
+test('download-invoices', async ({page}, testInfo) => {
+  const tempDir = testInfo.outputPath("data", "temp");
+  fs.mkdirSync(tempDir, { recursive: true });
+  const newLastUpdate = await nav.startScraper(page, config, tempDir);
+  expect(newLastUpdate.isSame(dayjs()));
+});

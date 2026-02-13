@@ -1,0 +1,31 @@
+{
+  "name": "scarica-fatture-digitalhub",
+  "version": "1.0.0",
+  "main": "src/main.ts",
+  "scripts": {
+    "postinstall": "playwright install chromium --with-deps",
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "remote:start": "ts-node -r tsconfig-paths/register src/remote.ts",
+
+    "dev:test": "playwright test --config=test/tests.config.ts",
+    "dev:generate-schema": "ts-node src/shared/schema-generator.ts"
+  },
+  "author": "zabaio",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
+    "@types/node": "^20.9.0"
+  },
+  "dependencies": {
+    "@playwright/test": "1.58.2",
+    "adm-zip": "^0.5.16",
+    "dayjs": "^1.11.13",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9",
+    "zod": "^4.3.6"
+  }
+}
