@@ -1,9 +1,0 @@
-{
-    "dhUsername":  "",
-    "dhPassword":  "",
-    "dhCessionari":  [""],
-    "dhLastDayDownloaded":  "2019-01-01",
-    "dhMaxChunkSize":  30,
-    "dhXmlDir":  "data/xml/",
-    "dhArchiveDir":  "data/archives/"
-}
