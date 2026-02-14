@@ -79,11 +79,11 @@ export async function exportAndDownload (page: Page, downloadPath: string){
     await gestioneEsportazioniButton.click();
   
     console.log("Waiting for export...")
-    const endTime = Date.now() + 300_000;
+    const endTime = dayjs().add(300,"seconds");
     const mainFrame = page.frameLocator('iframe[name="Main"]');
     const statusLocator = mainFrame.locator("[id$='_gridZip_0_9_viewDiv']");
   
-    while (Date.now() < endTime) {
+    while (dayjs().isBefore(endTime)) {
   
       await statusLocator.waitFor({ state: 'visible', timeout: 7500 });
       if (await statusLocator.innerText() === 'Disponibile'){

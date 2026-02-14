@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '0 3 * * *'
 jobs:
-  test:
+  start:
     timeout-minutes: 10
     runs-on: ubuntu-latest
     container:

@@ -69,7 +69,9 @@ export async function main(config: Config): Promise<void> {
   updateConfig(config, newLastUpdate);
 }
 
-main(loadConfig(configPath)).catch((error) => {
-  console.error('Unhandled error:', error);
-  process.exit(1);
-});
+if(require.main === module){
+  main(loadConfig(configPath)).catch((error) => {
+    console.error('Unhandled error:', error);
+    process.exit(1);
+  });
+}
