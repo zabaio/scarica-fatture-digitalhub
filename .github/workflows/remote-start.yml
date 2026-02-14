@@ -35,7 +35,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git fetch origin workflow
-          git show origin/workflow:last-run.json > config/last-run.json
+          git checkout workflow -- last-run.json
     
       - name: Run main
         run: npm run remote:start
@@ -49,8 +49,8 @@ jobs:
 
       - name: Save to workflow branch
         run: |
-          git fetch origin workflow && git checkout workflow
-          git show main:config/last-run.json > last-run.json
-          git add last-run.json
-          git commit -m "Update last-run [$env:GITHUB_RUN_NUMBER]"
+          git add last-run.json && git commit -m "temp: add last-run.json"
+          git checkout workflow
+          git checkout main -- last-run.json
+          git commit -am "Update last-run [$env:GITHUB_RUN_NUMBER]"
           git push origin workflow
