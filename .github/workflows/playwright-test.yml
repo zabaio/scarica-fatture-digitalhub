@@ -1,9 +1,11 @@
 name: Playwright Tests
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
+    paths-ignore:
+      - '.github/workflows/remote-start.yml' 
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
   workflow_dispatch:
   schedule:
     - cron: '0 2 1,15 * *'

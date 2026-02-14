@@ -31,6 +31,9 @@ jobs:
 
       - name: Restore last-run.json
         run: |
+          git config --global safe.directory '*'
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
           git fetch origin workflow
           git show origin/workflow:last-run.json > config/last-run.json
     
@@ -48,9 +51,6 @@ jobs:
         run: |
           git fetch origin workflow && git checkout workflow
           git show main:config/last-run.json > last-run.json
-          git config --global safe.directory '*'
-          git config user.name "github-actions"
-          git config user.email "github-actions@users.noreply.github.com"
           git add last-run.json
           git commit -m "Update last-run [$env:GITHUB_RUN_NUMBER]"
           git push origin workflow
