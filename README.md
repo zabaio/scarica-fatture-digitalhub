@@ -1,31 +1,26 @@
 # scarica-fatture-digitalhub
-Script per scaricare fatture xml dalla piattaforma DigitalHub di Zucchetti tramite Playwright.
+Package per scaricare fatture xml dalla piattaforma Zucchetti DigitalHub tramite Playwright.
 
-![Node.js](https://img.shields.io/badge/Node.js-v22.9.0-blue)
-[![Playwright Tests](https://github.com/zabaio/scarica-fatture-digitalhub/actions/workflows/playwright.yml/badge.svg)](https://github.com/zabaio/scarica-fatture-digitalhub/actions/workflows/playwright-test.yml)
+![Node.js](https://img.shields.io/badge/Node.js-v20.9.0-blue)
+[![Playwright Test](https://github.com/zabaio/scarica-fatture-digitalhub/actions/workflows/playwright-test.yml/badge.svg)](https://github.com/zabaio/scarica-fatture-digitalhub/actions/workflows/playwright-test.yml)
 
-## Installazione
-
-    npm ci
-    npx playwright install --with-deps chromium
-
-## Configurazione
-
-    //Apri config\config.empty.json
-    //Compila
-        ...
-        "dhUsername" = <Nome utente DigitalHub>,
-        "dhPassword" = <Password DigitalHub>,
-        "dhCessionari" = [<Nome Cessionario 1>, ...],
-        "dhLastDayDownloaded" = <Data di inizio ricerca / ultimo aggiornamento>,
-        "dhMaxChunkSize" = <Durata massima in giorni di ciascuna esportazione>,
-        "dhXmlDir" = <Cartella di destinazione delle fatture>,
-        ...
-    //Salva come config\config.json
+## Locale
+Segui questi passi per eseguire lo script manualmente e scaricare le fatture in locale.
+### Requisiti
+    Node.js v20.9.0
     
-## Uilizzo
+### Installazione
+    npm install scarica-fatture-digitalhub --omit=dev
 
-    powershell.exe ./run.ps1 -ExecutionPolicy Bypass
+### Configurazione
+    //Compila config/config.json
+    //Dettagli sui parametri di configurazione validi in config/config.schema.json
+
+### Uilizzo
+    npm start
+    
+## Remoto
+Segui questi passi per eseguire giornalmente lo script e inviare le fatture scaricate ad un remote rclone.
 
 ## Funzionalità
 

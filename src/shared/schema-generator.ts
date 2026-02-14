@@ -5,32 +5,33 @@ import { z } from 'zod';
 export const ConfigSchema = z.object({
 
   dhUsername: z.string()
-    .describe('Your DigitalHub username'),
+    .describe('Nome utente DigitalHub'),
 
   dhPassword: z.string()
-    .describe('Your DigitalHub password'),
+    .describe('Password Digitalhub'),
 
   dhCessionari: z.array(z.string())
-    .describe('The list of Cessionari whose invoices you want to download')
+    .describe('Lista di Cessionari di cui esportare le fatture')
     .min(1),
 
-  dhLastDayDownloaded: z.string()
-    .describe('First run: date of first invoice. After that: day of the last successful update operation. - yyyy-MM-dd')
-    .date()
+  dhLastDayDownloaded: z.iso.date()
+    .describe('Giorno fino a cui ignorare le fatture precedenti - yyyy-MM-dd')
     .default("2019-01-01"),
 
   dhMaxChunkSize: z.number()
-    .describe("The maximum number of days each export operation can cover")
+    .describe("Durata massima in giorni di ciascuna esportazione")
     .int()
     .min(1)
     .max(60)
     .default(30),
   
   dhXmlDir: z.string()
-    .describe('Relative path to the designated xml directory'),
+    .describe('Percorso della cartella di destinazione delle fatture')
+    .default('data/xml'),
 
   dhArchiveDir: z.string()
-    .describe('Relative path to the archive directory'),
+    .describe('Percorso della cartella di destinazione delle archivi esportati')
+    .default('data/archives'),
 });
 
 // Infer TypeScript type from schema

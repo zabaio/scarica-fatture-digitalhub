@@ -1,0 +1,9 @@
+{
+    "dhUsername": "<Nome utente DigitalHub>",
+    "dhPassword": "<Password DigitalHub>",
+    "dhCessionari": ["<Nome Cessionario 1>", "..."],
+    "dhLastDayDownloaded": "<Giorno fino a cui ignorare le fatture precedenti - yyyy-MM-dd>",
+    "dhMaxChunkSize": "<Durata massima in giorni di ciascuna esportazione>",
+    "dhXmlDir": "<Percorso della cartella di destinazione delle fatture>",
+    "dhArchiveDir": "<Percorso della cartella di destinazione delle archivi esportati>"
+}
