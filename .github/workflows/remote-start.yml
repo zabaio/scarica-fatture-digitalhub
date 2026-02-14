@@ -38,7 +38,7 @@ jobs:
           git show origin/workflow:last-run.json > config/last-run.json
     
       - name: Run main
-        run: npm remote:start
+        run: npm run remote:start
 
       - name: Upload files to rclone remote
         env:
