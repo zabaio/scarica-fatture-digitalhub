@@ -111,7 +111,12 @@ export async function startScraper(page: Page, config: Config, tempDir: string):
   let startDate = dayjs(config.dhLastDayDownloaded).add(1,"day");
   let endDate: dayjs.Dayjs;
   const today = dayjs();
-  await login(page, config);
+  try{
+    await login(page, config);
+  }catch (error){
+    console.log("Could not login", error);
+    return startDate;
+  }
   
   while (startDate.isSameOrBefore(today, "day")){
     endDate = dayjs.min(startDate.add(config.dhMaxChunkSize - 1, 'day'), today);
