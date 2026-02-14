@@ -34,6 +34,20 @@ jobs:
           git config --global safe.directory '*'
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
+          git fetch origin workflow 2>$null
+          if ($?) { 
+            git checkout origin/workflow -- last-run.json 2>$null
+            if (-not $?) { 
+              '{}' | Out-File -FilePath last-run.json -NoNewline }
+          } else { 
+            '{}' | Out-File -FilePath last-run.json -NoNewline 
+          }
+
+      - name: Restore last-run.json
+        run: |
+          git config --global safe.directory '*'
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
           git fetch origin workflow
           git checkout origin/workflow -- last-run.json
     
@@ -49,8 +63,13 @@ jobs:
 
       - name: Save to workflow branch
         run: |
-          git add last-run.json && git commit -m "temp: add last-run.json"
-          git checkout workflow
-          git checkout main -- last-run.json
+          git fetch origin workflow 2>$null
+          if ($?) { 
+            git checkout workflow; 
+            git checkout main -- last-run.json 
+          } else { 
+            git checkout -b workflow; 
+            git add last-run.json 
+          }
           git commit -am "Update last-run [$env:GITHUB_RUN_NUMBER]"
           git push origin workflow
