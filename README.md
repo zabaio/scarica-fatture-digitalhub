@@ -1,6 +1,6 @@
 # scarica-fatture-digitalhub
 
-[![npm version](https://img.shields.io/npm/v/scarica-fatture-digitalhub)](https://www.npmjs.com/package/scarica-fatture-digitalhub)
+[![npm version](https://img.shields.io/npm/v/@zabaio/scarica-fatture-digitalhub)](https://www.npmjs.com/package/@zabaio/scarica-fatture-digitalhub)
 [![Playwright Test](https://github.com/zabaio/scarica-fatture-digitalhub/actions/workflows/playwright-test.yml/badge.svg)](https://github.com/zabaio/scarica-fatture-digitalhub/actions/workflows/playwright-test.yml)
 
 Package per scaricare fatture xml dalla piattaforma Zucchetti DigitalHub tramite Playwright.
@@ -11,12 +11,13 @@ Segui questi passi per eseguire lo script manualmente e scaricare le fatture in 
     Node.js ≥20.9.0
     
 ### Installazione
-    npm install scarica-fatture-digitalhub --omit=dev
+    git clone https://github.com/zabaio/scarica-fatture-digitalhub.git
+    cd scarica-fatture-digitalhub
+    npm install --omit=dev
 
 ### Configurazione
 1. Compila `config/config.json`
-> [!TIP]
-> Puoi trovare i dettagli sui parametri di configurazione validi in `config/config.schema.json`
+**💡 Tip:** Puoi trovare i dettagli sui parametri di configurazione validi in `config/config.schema.json`
 
 ### Uilizzo
     npm start

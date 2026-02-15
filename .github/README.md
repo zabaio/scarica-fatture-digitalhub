@@ -11,7 +11,9 @@ Segui questi passi per eseguire lo script manualmente e scaricare le fatture in 
     Node.js ≥20.9.0
     
 ### Installazione
-    npm install scarica-fatture-digitalhub --omit=dev
+    git clone https://github.com/zabaio/scarica-fatture-digitalhub.git
+    cd scarica-fatture-digitalhub
+    npm install --omit=dev
 
 ### Configurazione
 1. Compila `config/config.json`
