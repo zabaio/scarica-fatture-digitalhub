@@ -5,8 +5,6 @@
   "main": "src/main.ts",
   "scripts": {
     "postinstall": "playwright install chromium --with-deps",
-    "prepublishOnly": "cp README.npm.md README.mde",
-    "prepublish": "git checkout README.md",
 
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "remote:start": "ts-node -r tsconfig-paths/register src/remote.ts",
