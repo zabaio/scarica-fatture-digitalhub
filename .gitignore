@@ -13,3 +13,5 @@ config/rclone.conf
 
 .vscode/
 /data/
+
+.npmignore/

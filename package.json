@@ -1,15 +1,25 @@
 {
   "name": "scarica-fatture-digitalhub",
   "version": "1.0.0",
+  "description": "Scarica fatture da Zucchetti DigitalHub tramite Playwright.",
   "main": "src/main.ts",
   "scripts": {
     "postinstall": "playwright install chromium --with-deps",
+    "prepublishOnly": "cp README.npm.md README.mde",
+    "prepublish": "git checkout README.md",
+
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "remote:start": "ts-node -r tsconfig-paths/register src/remote.ts",
 
     "dev:test": "playwright test --config=test/tests.config.ts",
     "dev:generate-schema": "ts-node src/shared/schema-generator.ts"
   },
+  "files": [
+    "config",
+    "src",
+    "test",
+    "tsconfig.json"
+  ],
   "author": "zabaio",
   "license": "MIT",
   "engines": {
