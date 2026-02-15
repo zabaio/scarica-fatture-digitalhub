@@ -16,7 +16,9 @@
     "config",
     "src",
     "test",
-    "tsconfig.json"
+    "tsconfig.json",
+    "!config/private-config.json",
+    "!config/rclone.conf",
   ],
   "author": "zabaio",
   "license": "MIT",
@@ -35,5 +37,6 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.9",
     "zod": "^4.3.6"
-  }
+  },
+  "keywords": ["digitalhub", "zucchetti", "playwright", "fatture"]
 }
