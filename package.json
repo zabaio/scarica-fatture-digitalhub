@@ -38,5 +38,9 @@
     "typescript": "^5.9",
     "zod": "^4.3.6"
   },
-  "keywords": ["digitalhub", "zucchetti", "playwright", "fatture"]
+  "keywords": ["digitalhub", "zucchetti", "playwright", "fatture"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zabaio/scarica-fatture-digitalhub.git"
+  }
 }
