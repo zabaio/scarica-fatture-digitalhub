@@ -1,14 +1,12 @@
 {
   "name": "@zabaio/scarica-fatture-digitalhub",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scarica fatture da Zucchetti DigitalHub tramite Playwright.",
   "main": "src/main.ts",
   "scripts": {
     "postinstall": "playwright install chromium --with-deps",
-
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "remote:start": "ts-node -r tsconfig-paths/register src/remote.ts",
-
     "dev:test": "playwright test --config=test/tests.config.ts",
     "dev:generate-schema": "ts-node src/shared/schema-generator.ts"
   },
@@ -38,7 +36,12 @@
     "typescript": "^5.9",
     "zod": "^4.3.6"
   },
-  "keywords": ["digitalhub", "zucchetti", "playwright", "fatture"],
+  "keywords": [
+    "digitalhub",
+    "zucchetti",
+    "playwright",
+    "fatture"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/zabaio/scarica-fatture-digitalhub.git"
