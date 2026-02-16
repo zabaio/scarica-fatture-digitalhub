@@ -1,6 +1,6 @@
 {
   "name": "@zabaio/scarica-fatture-digitalhub",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Scarica fatture da Zucchetti DigitalHub tramite Playwright.",
   "main": "src/main.ts",
   "scripts": {
