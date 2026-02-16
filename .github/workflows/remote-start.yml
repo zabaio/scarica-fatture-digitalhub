@@ -54,13 +54,14 @@ jobs:
 
       - name: Save to workflow branch
         run: |
-          git fetch origin workflow 2>$null
-          if ($?) { 
-            git checkout workflow; 
-            git checkout main -- last-run.json 
+          $newLastRun = Get-Content last-run.json -Raw
+          git fetch origin workflow 2>&1 | Out-Null
+          if ($LASTEXITCODE -eq 0) {
+            git checkout workflow
           } else { 
-            git checkout -b workflow; 
-            git add last-run.json 
+            git checkout -b workflow 
           }
-          git commit -am "Update last-run [$env:GITHUB_RUN_NUMBER]"
+          $newLastRun | Out-File -FilePath last-run.json -NoNewline -Force
+          git add last-run.json
+          git commit -m "Update last-run [$env:GITHUB_RUN_NUMBER]"
           git push origin workflow
