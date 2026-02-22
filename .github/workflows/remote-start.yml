@@ -57,7 +57,7 @@ jobs:
           $newLastRun = Get-Content last-run.json -Raw
           git fetch origin workflow 2>&1 | Out-Null
           if ($LASTEXITCODE -eq 0) {
-            git checkout workflow
+            git checkout -f workflow
           } else { 
             git checkout -b workflow 
           }
