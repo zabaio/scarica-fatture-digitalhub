@@ -59,7 +59,8 @@ jobs:
           if ($LASTEXITCODE -eq 0) {
             git checkout -f workflow
           } else { 
-            git checkout -b workflow 
+            git checkout --orphan workflow
+            git rm -rf . 
           }
           $newLastRun | Out-File -FilePath last-run.json -NoNewline -Force
           git add last-run.json
